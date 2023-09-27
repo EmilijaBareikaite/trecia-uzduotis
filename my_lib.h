@@ -4,6 +4,7 @@
 #include <iomanip>
 #include <cstdio>
 #include <algorithm>
+#include <cstdlib>
 
 using std::cout;
 using std::cin;
