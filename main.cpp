@@ -36,7 +36,7 @@ int main() {
         
     }
     //isvedimas
-    printf("%-15s%-15s%-10s\n", "Vardas","Pavardė","Rezultatas" );
+    printf("%-15s%-15s%-10s\n", "Vardas","Pavardė","Rez" );
     cout<<"-----------------------------------"<<endl;
     for (auto &a: grupe){
         cout<<left<<setw(15)<<a.vard<<setw(15)<<a.pavard<<setw(10)<<fixed<<setprecision(2)<<a.rez<<endl;
