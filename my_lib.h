@@ -3,6 +3,7 @@
 #include <vector>
 #include <iomanip>
 #include <cstdio>
+#include <algorithm>
 
 using std::cout;
 using std::cin;
@@ -18,7 +19,6 @@ struct studentas {
     string vard, pavard;
     vector <int> paz;
     int egz;
-    float vidurkis;
-    float rez;
+    float vidurkis, rez, mediana;
 };
 //studentas - tipas; kaip float ar int
