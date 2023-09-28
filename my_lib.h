@@ -26,6 +26,7 @@ struct studentas {
     int egz;
     float vidurkis, rez, mediana;
     
+    
     bool operator<(const studentas& other) const {
         if (pavard != other.pavard) {
                     return pavard < other.pavard;
