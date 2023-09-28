@@ -5,6 +5,8 @@
 #include <cstdio>
 #include <algorithm>
 #include <cstdlib>
+#include <fstream>
+#include <sstream>
 
 using std::cout;
 using std::cin;
@@ -15,6 +17,7 @@ using std::fixed;
 using std::setprecision;
 using std::setw;
 using std::left;
+using std::ifstream;
 
 struct studentas {
     string vard, pavard;

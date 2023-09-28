@@ -50,3 +50,5 @@ void isvedimas_m(vector<studentas> grupe) {
     }
 
 }
+
+
