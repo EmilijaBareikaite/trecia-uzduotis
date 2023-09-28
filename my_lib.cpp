@@ -37,7 +37,7 @@ void isvedimas_v(vector<studentas> grupe) {
     cout<<"----------------------------------------------------------------"<<endl;
     for (auto &a: grupe)
     {
-        cout<<left<<setw(25)<<a.pavard<<setw(25)<<a.vard<<setw(15)<<fixed<<setprecision(2)<<a.rez<<endl;
+        cout<<left<<setw(24)<<a.pavard<<left<<setw(25)<<a.vard<<left<<setw(15)<<fixed<<setprecision(2)<<a.rez<<endl;
     }
 }
 
@@ -46,9 +46,10 @@ void isvedimas_m(vector<studentas> grupe) {
     cout<<"----------------------------------------------------------------"<<endl;
     for (auto &a: grupe)
     {
-        cout<<left<<setw(25)<<a.pavard<<setw(25)<<a.vard<<setw(15)<<fixed<<setprecision(2)<<a.mediana<<endl;
+        cout<<left<<setw(24)<<a.pavard<<left<<setw(25)<<a.vard<<left<<setw(15)<<fixed<<setprecision(2)<<a.mediana<<endl;
     }
 
 }
+
 
 

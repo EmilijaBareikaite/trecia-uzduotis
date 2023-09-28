@@ -76,6 +76,7 @@ int main() {
         char spausd;
         cout<<"Ar norite, kad rodytų studentų galutinį vidurkį ar medianą? Rašykite 'v', jeigu norite vidurkio, ir 'm', jeigu norite medianos. ";
         cin>>spausd;
+        sort(grupe.begin(), grupe.end());
         if (spausd == 'v') {
             isvedimas_v(grupe);
         }
@@ -134,6 +135,7 @@ int main() {
         char ats;
         cout<<"Norite, kad rodytų galutinį rezultatą pagal vidurkį ar medianą? spauskite 'v', jei vidurkį, ir 'm', jei medianą ";
         cin>>ats;
+        sort(grupe.begin(), grupe.end());
         if (ats == 'v')
             isvedimas_v(grupe);
         else isvedimas_m(grupe);
