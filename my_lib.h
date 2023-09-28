@@ -18,6 +18,7 @@ using std::setprecision;
 using std::setw;
 using std::left;
 using std::ifstream;
+using std::istringstream;
 
 struct studentas {
     string vard, pavard;
