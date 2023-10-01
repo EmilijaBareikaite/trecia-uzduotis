@@ -102,7 +102,9 @@ int main() {
         ifstream myfile(failo_kelias);
         int count_nd_words = 0;
     
-        if(myfile.fail() == true) cout<<"nepavyko atidaryti failo"<<endl;
+        if(myfile.fail() == true) {cout<<"nepavyko atidaryti failo"<<endl;
+            return 1;
+        }
     
         string eilute;
        
@@ -138,7 +140,9 @@ int main() {
             grupe.push_back(laikinas);
             laikinas.paz.clear();
         }
+        
         myfile.close();
+        sort(grupe.begin(), grupe.end());
         isvedimas_f(grupe);
     }
         
