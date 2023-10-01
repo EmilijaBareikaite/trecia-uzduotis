@@ -27,7 +27,7 @@ struct studentas {
     float vidurkis, rez, mediana;
     
     
-    bool operator<(const studentas& other) const {
+    bool operator<(const studentas& other) const{
         if (pavard != other.pavard) {
                     return pavard < other.pavard;
                 }
@@ -40,5 +40,9 @@ float count_median(vector<int> pazymiai);
 float gal_vid(vector<int> pazymiai, int egzaminas);
 void isvedimas_v(vector<studentas> grupe);
 void isvedimas_m(vector<studentas> grupe);
+void isvedimas_f(vector<studentas> grupe);
+void mokiniu_sk_patikrinimas(int& m);
+void budo_patikrinimas(char& budas);
+void egzamino_tikrinimas(int& egz, struct studentas laikinas);
+void a_paz_tikrinimas(int& a_paz_kiekis);
 
-//studentas - tipas; kaip float ar int
