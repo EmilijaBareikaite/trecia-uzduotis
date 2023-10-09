@@ -18,7 +18,9 @@ using std::setprecision;
 using std::setw;
 using std::left;
 using std::ifstream;
+using std::ofstream;
 using std::istringstream;
+using std::to_string;
 
 struct studentas {
     string vard, pavard;
@@ -45,4 +47,5 @@ void mokiniu_sk_patikrinimas(int& m);
 void budo_patikrinimas(char& budas);
 void egzamino_tikrinimas(int& egz, struct studentas laikinas);
 void a_paz_tikrinimas(int& a_paz_kiekis);
+void Generavimas_failo(int skaic);
 

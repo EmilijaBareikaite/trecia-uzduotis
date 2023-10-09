@@ -6,7 +6,7 @@ int main() {
     vector <studentas> grupe;
     char suvedimas;
     try {
-    cout << "Ar studentų duomenis norite nuskaityti iš failo, ar norite suvedinėti? Spauskite 'f', jei iš failo, ir 's', jei norite suvedinėti. ";
+    cout << "Ar studentų duomenis norite nuskaityti iš failo, ar norite suvedinėti, ar norite generuoti failus? Spauskite 'f', jei iš failo, 's', jei norite suvedinėti, 'g', jei generuoti. ";
     cin >> suvedimas;
     
     if (suvedimas == 's') {
@@ -144,6 +144,14 @@ int main() {
         myfile.close();
         sort(grupe.begin(), grupe.end());
         isvedimas_f(grupe);
+    }
+    else if (suvedimas =='g')
+    {
+        Generavimas_failo(1000);
+        Generavimas_failo(10000);
+        Generavimas_failo(100000);
+        Generavimas_failo(1000000);
+        Generavimas_failo(10000000);
     }
         
     else throw std::runtime_error("Netinkamas atsakymas suvedimui. Prašome įvesti 's' arba 'f'.");

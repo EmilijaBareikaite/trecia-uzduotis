@@ -121,3 +121,29 @@ void a_paz_tikrinimas(int& a_paz_kiekis) {
     }
 }
 
+void Generavimas_failo(int skaic)
+{
+    ofstream failas("studentai"+to_string(skaic)+".txt");
+    
+    if(!failas) {std::cerr<<"Failo klaida"<<endl;}
+    srand(time(NULL));
+    
+    
+    failas <<left<<setw(20)<< "Vardas" <<left<<setw(20)<<"Pavarde";
+    for(int i=1; i<=5; i++) failas <<left<<setw(5)<< "ND"+to_string(i);
+    failas <<left<<setw(5)<<"Egz"<< endl;
+    
+    for (int j=1; j<=skaic; j++)
+    {
+        failas <<left<<setw(20)<< "Vardas" + to_string(j) <<left<<setw(20)<< "Pavarde" + to_string(j);
+        for (int k=0; k<5; k++)
+        {
+            int nd = (rand() % 10) + 1;
+            failas <<left<<setw(5)<< nd;
+            
+        }
+            int egz = (rand() % 10) + 1;
+            failas <<left<<setw(5)<< egz <<endl;
+    }
+}
+
