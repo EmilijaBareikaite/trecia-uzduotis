@@ -48,4 +48,5 @@ void budo_patikrinimas(char& budas);
 void egzamino_tikrinimas(int& egz, struct studentas laikinas);
 void a_paz_tikrinimas(int& a_paz_kiekis);
 void Generavimas_failo(int skaic);
+void generuoto_failo_skirstymas(string kelias, struct studentas laikinas, vector<studentas> vargsiukai, vector<studentas> gudruciai);
 

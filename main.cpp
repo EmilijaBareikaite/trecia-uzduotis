@@ -4,6 +4,8 @@ int main() {
     
     studentas laikinas;
     vector <studentas> grupe;
+    vector <studentas> gudruciai;
+    vector <studentas> vargsiukai;
     char suvedimas;
     try {
     cout << "Ar studentų duomenis norite nuskaityti iš failo, ar norite suvedinėti, ar norite generuoti failus? Spauskite 'f', jei iš failo, 's', jei norite suvedinėti, 'g', jei generuoti. ";
@@ -145,6 +147,7 @@ int main() {
         sort(grupe.begin(), grupe.end());
         isvedimas_f(grupe);
     }
+    
     else if (suvedimas =='g')
     {
         Generavimas_failo(1000);
@@ -152,9 +155,15 @@ int main() {
         Generavimas_failo(100000);
         Generavimas_failo(1000000);
         Generavimas_failo(10000000);
+        
+        generuoto_failo_skirstymas("/Users/emilijabareikaite/Desktop/pradinė/Build/Products/Debug/studentai1000.txt", laikinas, vargsiukai, gudruciai);
+        generuoto_failo_skirstymas("/Users/emilijabareikaite/Desktop/pradinė/Build/Products/Debug/studentai10000.txt", laikinas, vargsiukai, gudruciai);
+        generuoto_failo_skirstymas("/Users/emilijabareikaite/Desktop/pradinė/Build/Products/Debug/studentai100000.txt", laikinas, vargsiukai, gudruciai);
+        generuoto_failo_skirstymas("/Users/emilijabareikaite/Desktop/pradinė/Build/Products/Debug/studentai1000000.txt", laikinas, vargsiukai, gudruciai);
+        generuoto_failo_skirstymas("/Users/emilijabareikaite/Desktop/pradinė/Build/Products/Debug/studentai10000000.txt", laikinas, vargsiukai, gudruciai);
     }
         
-    else throw std::runtime_error("Netinkamas atsakymas suvedimui. Prašome įvesti 's' arba 'f'.");
+    else throw std::runtime_error("Netinkamas atsakymas suvedimui. Prašome įvesti 's' arba 'f', arba 'g'.");
     
     }
     catch (const std::exception& e) {std::cerr << "An exception occurred: " << e.what() << endl;

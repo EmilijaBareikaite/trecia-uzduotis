@@ -147,3 +147,50 @@ void Generavimas_failo(int skaic)
     }
 }
 
+void generuoto_failo_skirstymas(string kelias, struct studentas laikinas, vector<studentas> vargsiukai, vector<studentas> gudruciai)
+{
+    ifstream myfile(kelias);
+    int count_nd_words = 0;
+
+    if(myfile.fail() == true) cout<<"nepavyko atidaryti failo"<<endl;
+        
+    string eilute;
+
+    for (int i = 0; i<1; i++) getline(myfile,eilute);
+
+    istringstream iss(eilute);
+    string zodis;
+
+    while (iss >> zodis) {
+        if (zodis.substr(0, 2) == "ND") count_nd_words++;
+    }
+
+    while(myfile >> laikinas.vard >> laikinas.pavard) {
+
+        for(int i=0; i<count_nd_words; i++)
+        {
+            int nd_skaicius;
+
+            if (!(myfile >> nd_skaicius)) throw std::invalid_argument("Pažymys nėra sveikas skaičius. Pataisykite failą");
+
+            if (nd_skaicius>10 || nd_skaicius <=0) throw std::invalid_argument("Pažymys nėra sveikas teigiamas skaičius tarp 1 ir 10. Pataisykite failą.");
+
+            laikinas.paz.push_back(nd_skaicius);
+        }
+
+        myfile>> laikinas.egz;
+        if (!myfile >> laikinas.egz) throw std::invalid_argument("Egzaminas nėra sveikas skaičius. Pataisykite failą");
+
+        else if (laikinas.egz>10 || laikinas.egz <=0) throw std::invalid_argument("Egzaminas nėra sveikas teigiamas skaičius tarp 1 ir 10. Pataisykite failą.");
+
+        laikinas.rez = gal_vid(laikinas.paz, laikinas.egz);
+
+        if (laikinas.rez<5) vargsiukai.push_back(laikinas);
+        else gudruciai.push_back(laikinas);
+        
+        laikinas.paz.clear();
+
+    }
+    myfile.close();
+}
+
