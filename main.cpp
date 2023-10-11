@@ -150,17 +150,10 @@ int main() {
     
     else if (suvedimas =='g')
     {
-        Generavimas_failo(1000);
-        Generavimas_failo(10000);
-        Generavimas_failo(100000);
-        Generavimas_failo(1000000);
-        Generavimas_failo(10000000);
+        Generavimas_failo(100);
+     
+        generuoto_failo_skirstymas("/Users/emilijabareikaite/Desktop/pradinė/Build/Products/Debug/studentai100.txt", laikinas, vargsiukai, gudruciai);
         
-        generuoto_failo_skirstymas("/Users/emilijabareikaite/Desktop/pradinė/Build/Products/Debug/studentai1000.txt", laikinas, vargsiukai, gudruciai);
-        generuoto_failo_skirstymas("/Users/emilijabareikaite/Desktop/pradinė/Build/Products/Debug/studentai10000.txt", laikinas, vargsiukai, gudruciai);
-        generuoto_failo_skirstymas("/Users/emilijabareikaite/Desktop/pradinė/Build/Products/Debug/studentai100000.txt", laikinas, vargsiukai, gudruciai);
-        generuoto_failo_skirstymas("/Users/emilijabareikaite/Desktop/pradinė/Build/Products/Debug/studentai1000000.txt", laikinas, vargsiukai, gudruciai);
-        generuoto_failo_skirstymas("/Users/emilijabareikaite/Desktop/pradinė/Build/Products/Debug/studentai10000000.txt", laikinas, vargsiukai, gudruciai);
     }
         
     else throw std::runtime_error("Netinkamas atsakymas suvedimui. Prašome įvesti 's' arba 'f', arba 'g'.");

@@ -192,5 +192,36 @@ void generuoto_failo_skirstymas(string kelias, struct studentas laikinas, vector
 
     }
     myfile.close();
+    sort(vargsiukai.begin(), vargsiukai.end());
+    sort(gudruciai.begin(), gudruciai.end());
+        
+    ofstream v_failas("vargsiukai.txt");
+    
+    if(!v_failas) std::cerr<<"Failo klaida"<<endl;
+   
+    v_failas <<left<<setw(20)<< "Vardas" <<left<<setw(20)<<"Pavarde";
+    for(int i=1; i<=5; i++) v_failas <<left<<setw(5)<< "ND"+to_string(i);
+    v_failas <<left<<setw(5)<<"Egz"<<left<<setw(10)<<"Galutinis (Vid.)"<< endl;
+    
+    for (auto &c: vargsiukai)
+    {v_failas<<left<<setw(20)<<c.vard<<left<<setw(20)<<c.pavard;
+        for (auto &d: c.paz) v_failas<<left<<setw(5)<<to_string(d);
+        v_failas<<left<<setw(5)<<c.egz<<setw(10)<<fixed<<setprecision(2)<<c.rez<<endl;}
+    v_failas.close();
+    
+    ofstream g_failas("gudruciai.txt");
+    
+    if(!g_failas) std::cerr<<"Failo klaida"<<endl;
+   
+    g_failas <<left<<setw(20)<< "Vardas" <<left<<setw(20)<<"Pavarde";
+    for(int i=1; i<=5; i++) g_failas <<left<<setw(5)<< "ND"+to_string(i);
+    g_failas <<left<<setw(5)<<"Egz"<<left<<setw(10)<<"Galutinis (Vid.)"<< endl;
+    
+    for (auto &a: gudruciai)
+    {g_failas<<left<<setw(20)<< a.vard<<left<<setw(20)<<a.pavard;
+        for (auto &b: a.paz) g_failas<<left<<setw(5)<<to_string(b);
+        g_failas <<left<<setw(5)<<a.egz<<setw(10)<<fixed<<setprecision(2)<<a.rez<<endl;}
+    g_failas.close();
+    
 }
 
