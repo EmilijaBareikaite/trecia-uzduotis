@@ -100,60 +100,22 @@ int main() {
         string failo_kelias;
         cout<< "Jūsų failo kelias: ";
         cin>> failo_kelias;
+        failo_skaitymas(failo_kelias, laikinas, grupe);
         
-        ifstream myfile(failo_kelias);
-        int count_nd_words = 0;
-    
-        if(myfile.fail() == true) {cout<<"nepavyko atidaryti failo"<<endl;
-            return 1;
-        }
-    
-        string eilute;
-       
-        for (int i = 0; i<1; i++) getline(myfile,eilute);
+        for (auto &a: grupe) {if (a.rez<5) vargsiukai.push_back(a);
+            else gudruciai.push_back(a);}
+        isrusiuotas_spausdinimas(vargsiukai, gudruciai);
         
-        istringstream iss(eilute);
-        string zodis;
-        
-        while (iss >> zodis) {
-            if (zodis.substr(0, 2) == "ND") count_nd_words++;
-        }
-    
-        while(myfile >> laikinas.vard >> laikinas.pavard) {
-            
-            for(int i=0; i<count_nd_words; i++)
-            {
-                int nd_skaicius;
-                
-                if (!(myfile >> nd_skaicius)) throw std::invalid_argument("Pažymys nėra sveikas skaičius. Pataisykite failą");
-                
-                if (nd_skaicius>10 || nd_skaicius <=0) throw std::invalid_argument("Pažymys nėra sveikas teigiamas skaičius tarp 1 ir 10. Pataisykite failą.");
-                
-                laikinas.paz.push_back(nd_skaicius);
-            }
-            
-            myfile>> laikinas.egz;
-            if (!myfile >> laikinas.egz) throw std::invalid_argument("Egzaminas nėra sveikas skaičius. Pataisykite failą");
-            
-            else if (laikinas.egz>10 || laikinas.egz <=0) throw std::invalid_argument("Egzaminas nėra sveikas teigiamas skaičius tarp 1 ir 10. Pataisykite failą.");
-            
-            laikinas.rez = gal_vid(laikinas.paz, laikinas.egz);
-            laikinas.mediana = count_median(laikinas.paz);
-            grupe.push_back(laikinas);
-            laikinas.paz.clear();
-        }
-        
-        myfile.close();
-        sort(grupe.begin(), grupe.end());
-        isvedimas_f(grupe);
     }
     
     else if (suvedimas =='g')
     {
-        Generavimas_failo(100);
-     
-        generuoto_failo_skirstymas("/Users/emilijabareikaite/Desktop/pradinė/Build/Products/Debug/studentai100.txt", laikinas, vargsiukai, gudruciai);
+        int failo_eilutes;
+        cout << "Kiek studentų bus faile?";
+        cin >> failo_eilutes;
         
+        if (cin.fail() && failo_eilutes<0) throw std::invalid_argument("Netinkamas atsakymas. Prašome įvesti teigiamą sveiką skaičių.");
+        Generavimas_failo(failo_eilutes);
     }
         
     else throw std::runtime_error("Netinkamas atsakymas suvedimui. Prašome įvesti 's' arba 'f', arba 'g'.");
@@ -165,6 +127,3 @@ int main() {
     system( "read -n 1 -s -p \"Press any key to continue...\"" );
     return 0;
 }
-
-
-

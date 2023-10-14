@@ -51,15 +51,6 @@ void isvedimas_m(vector<studentas> grupe) {
 
 }
 
-void isvedimas_f(vector<studentas> grupe) {
-    printf("%-25s%-18s%-20s%-15s\n", "Pavardė","Vardas","Galutinis (Vid.)","Galutinis (Med.)");
-    cout<<"------------------------------------------------------------------------------"<<endl;
-    for (auto &a: grupe)
-    {
-        cout<<left<<setw(24)<<a.pavard<<left<<setw(18)<<a.vard<<left<<setw(20)<<fixed<<setprecision(2)<<a.rez<<left<<setw(15)<<fixed<<setprecision(2)<<a.mediana<<endl;
-    }
-
-}
 
 void mokiniu_sk_patikrinimas(int& m) {
     
@@ -147,81 +138,75 @@ void Generavimas_failo(int skaic)
     }
 }
 
-void generuoto_failo_skirstymas(string kelias, struct studentas laikinas, vector<studentas> vargsiukai, vector<studentas> gudruciai)
-{
-    ifstream myfile(kelias);
+void failo_skaitymas(string failo_kelias, struct studentas laikinas, vector<studentas> &grupe)
+{ifstream myfile(failo_kelias);
     int count_nd_words = 0;
-
-    if(myfile.fail() == true) cout<<"nepavyko atidaryti failo"<<endl;
-        
+    
+    if(myfile.fail() == true) {cout<<"nepavyko atidaryti failo"<<endl;
+    }
+    
     string eilute;
-
+    
     for (int i = 0; i<1; i++) getline(myfile,eilute);
-
+    
     istringstream iss(eilute);
     string zodis;
-
+    
     while (iss >> zodis) {
         if (zodis.substr(0, 2) == "ND") count_nd_words++;
     }
-
+    
     while(myfile >> laikinas.vard >> laikinas.pavard) {
-
+        
         for(int i=0; i<count_nd_words; i++)
         {
             int nd_skaicius;
-
+            
             if (!(myfile >> nd_skaicius)) throw std::invalid_argument("Pažymys nėra sveikas skaičius. Pataisykite failą");
-
+            
             if (nd_skaicius>10 || nd_skaicius <=0) throw std::invalid_argument("Pažymys nėra sveikas teigiamas skaičius tarp 1 ir 10. Pataisykite failą.");
-
+            
             laikinas.paz.push_back(nd_skaicius);
         }
-
+        
         myfile>> laikinas.egz;
         if (!myfile >> laikinas.egz) throw std::invalid_argument("Egzaminas nėra sveikas skaičius. Pataisykite failą");
-
+        
         else if (laikinas.egz>10 || laikinas.egz <=0) throw std::invalid_argument("Egzaminas nėra sveikas teigiamas skaičius tarp 1 ir 10. Pataisykite failą.");
-
+        
         laikinas.rez = gal_vid(laikinas.paz, laikinas.egz);
-
-        if (laikinas.rez<5) vargsiukai.push_back(laikinas);
-        else gudruciai.push_back(laikinas);
-        
+        laikinas.mediana = count_median(laikinas.paz);
+        grupe.push_back(laikinas);
         laikinas.paz.clear();
-
     }
+    
     myfile.close();
-    sort(vargsiukai.begin(), vargsiukai.end());
-    sort(gudruciai.begin(), gudruciai.end());
-        
-    ofstream v_failas("vargsiukai.txt");
+}
+
+void isrusiuotas_spausdinimas(vector<studentas> vargsiukai, vector<studentas> gudruciai) {
     
-    if(!v_failas) std::cerr<<"Failo klaida"<<endl;
-   
-    v_failas <<left<<setw(20)<< "Vardas" <<left<<setw(20)<<"Pavarde";
-    for(int i=1; i<=5; i++) v_failas <<left<<setw(5)<< "ND"+to_string(i);
-    v_failas <<left<<setw(5)<<"Egz"<<left<<setw(10)<<"Galutinis (Vid.)"<< endl;
     
-    for (auto &c: vargsiukai)
-    {v_failas<<left<<setw(20)<<c.vard<<left<<setw(20)<<c.pavard;
-        for (auto &d: c.paz) v_failas<<left<<setw(5)<<to_string(d);
-        v_failas<<left<<setw(5)<<c.egz<<setw(10)<<fixed<<setprecision(2)<<c.rez<<endl;}
-    v_failas.close();
+    ofstream failas("vargsiukai.txt");
+    if(!failas) {std::cerr<<"Failo klaida"<<endl;}
+    
+    failas <<left<<setw(20)<< "Vardas" <<left<<setw(20)<<"Pavarde"<<left<<setw(10)<<"Galutinis (Vid.)"<<endl;
+    failas<<"-----------------------------------------------------"<<endl;
+    for (auto &a: vargsiukai) {
+        failas<<left<<setw(20)<<a.vard<<left<<setw(20)<<a.pavard<<left<<setw(10)<<fixed<<setprecision(2)<<a.rez<<endl;
+    }
+    failas.close();
     
     ofstream g_failas("gudruciai.txt");
+    if(!g_failas) {std::cerr<<"Failo klaida"<<endl;}
     
-    if(!g_failas) std::cerr<<"Failo klaida"<<endl;
-   
-    g_failas <<left<<setw(20)<< "Vardas" <<left<<setw(20)<<"Pavarde";
-    for(int i=1; i<=5; i++) g_failas <<left<<setw(5)<< "ND"+to_string(i);
-    g_failas <<left<<setw(5)<<"Egz"<<left<<setw(10)<<"Galutinis (Vid.)"<< endl;
-    
-    for (auto &a: gudruciai)
-    {g_failas<<left<<setw(20)<< a.vard<<left<<setw(20)<<a.pavard;
-        for (auto &b: a.paz) g_failas<<left<<setw(5)<<to_string(b);
-        g_failas <<left<<setw(5)<<a.egz<<setw(10)<<fixed<<setprecision(2)<<a.rez<<endl;}
+    g_failas <<left<<setw(20)<< "Vardas" <<left<<setw(20)<<"Pavarde"<<left<<setw(10)<<"Galutinis (Vid.)"<<endl;
+    g_failas<<"-----------------------------------------------------"<<endl;
+    for (auto &a: gudruciai) {
+        g_failas<<left<<setw(20)<<a.vard<<left<<setw(20)<<a.pavard<<left<<setw(10)<<fixed<<setprecision(2)<<a.rez<<endl;
+    }
     g_failas.close();
     
+    
 }
+
 
