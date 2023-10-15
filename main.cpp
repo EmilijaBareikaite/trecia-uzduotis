@@ -100,22 +100,41 @@ int main() {
         string failo_kelias;
         cout<< "Jūsų failo kelias: ";
         cin>> failo_kelias;
+        
+    
         failo_skaitymas(failo_kelias, laikinas, grupe);
         
+        int atsakymas;
+        cout<<"Pagal ką rūšiuoti vargšiukų ir gudručių failus? 1 - pagal vardą, 2 - pagal pavardę, 3 -  pagal rezultatą. ";
+        cin>>atsakymas;
+        
+        for (auto &a: grupe) {a.rusiavimas=atsakymas;}
+    
+        sort(grupe.begin(), grupe.end());
+        
+        auto start_2 = high_resolution_clock::now();
         for (auto &a: grupe) {if (a.rez<5) vargsiukai.push_back(a);
             else gudruciai.push_back(a);}
-        isrusiuotas_spausdinimas(vargsiukai, gudruciai);
+        auto end_2 = high_resolution_clock::now();
+        duration<double> diff_2 = end_2-start_2;
+        cout << to_string(grupe.size()) + " įrašų dalijimo i dvi grupes laikas: "<< diff_2.count() << " s\n";
         
+       
+        isrusiuotas_spausdinimas(vargsiukai, gudruciai);
+
     }
     
     else if (suvedimas =='g')
     {
         int failo_eilutes;
-        cout << "Kiek studentų bus faile?";
+        cout << "Kiek studentų bus faile? ";
         cin >> failo_eilutes;
         
         if (cin.fail() && failo_eilutes<0) throw std::invalid_argument("Netinkamas atsakymas. Prašome įvesti teigiamą sveiką skaičių.");
+        
+       
         Generavimas_failo(failo_eilutes);
+        
     }
         
     else throw std::runtime_error("Netinkamas atsakymas suvedimui. Prašome įvesti 's' arba 'f', arba 'g'.");
@@ -127,3 +146,4 @@ int main() {
     system( "read -n 1 -s -p \"Press any key to continue...\"" );
     return 0;
 }
+

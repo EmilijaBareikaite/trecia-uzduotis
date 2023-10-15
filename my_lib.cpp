@@ -2,8 +2,12 @@
 
 int generate_random_mark() //sugeneruojamas random skaic nuo 1 iki 10
 {
-    srand(time(NULL));
-    return (rand() % 10) + 1;
+    unsigned seed = std::chrono::system_clock::now().time_since_epoch().count();
+        std::mt19937 mt_engine(seed);
+
+        std::uniform_int_distribution<int> distribution(1, 10);
+        int random_number = distribution(mt_engine);
+        return random_number;
 }
 
 float count_median(vector<int> pazymiai) //funkcija skaiciuoja mediana
@@ -114,32 +118,49 @@ void a_paz_tikrinimas(int& a_paz_kiekis) {
 
 void Generavimas_failo(int skaic)
 {
+    int n;
+    cout<<"Kiek namų darbų rezultatų turės studentai? ";
+    cin>>n;
+    
+    if (n<0 || cin.fail()) throw std::invalid_argument("Netinkamai įvesta. Prašome įvesti teigiamą sveiką skaičių.");
+    
+    auto start = high_resolution_clock::now();
     ofstream failas("studentai"+to_string(skaic)+".txt");
     
     if(!failas) {std::cerr<<"Failo klaida"<<endl;}
-    srand(time(NULL));
+
+    
     
     
     failas <<left<<setw(20)<< "Vardas" <<left<<setw(20)<<"Pavarde";
-    for(int i=1; i<=5; i++) failas <<left<<setw(5)<< "ND"+to_string(i);
+    
+    for(int i=1; i<=n; i++) failas <<left<<setw(5)<< "ND"+to_string(i);
     failas <<left<<setw(5)<<"Egz"<< endl;
     
     for (int j=1; j<=skaic; j++)
     {
         failas <<left<<setw(20)<< "Vardas" + to_string(j) <<left<<setw(20)<< "Pavarde" + to_string(j);
-        for (int k=0; k<5; k++)
+        for (int k=0; k<n; k++)
         {
-            int nd = (rand() % 10) + 1;
+            int nd = generate_random_mark();
             failas <<left<<setw(5)<< nd;
-            
         }
-            int egz = (rand() % 10) + 1;
+            int egz = generate_random_mark();
             failas <<left<<setw(5)<< egz <<endl;
     }
+    
+    failas.close();
+    auto end = high_resolution_clock::now();
+    duration<double> diff = end-start;
+    std::cout << to_string(skaic) + " elementų užpildymas užtruko: "<< diff.count() << " s\n";
 }
 
+
 void failo_skaitymas(string failo_kelias, struct studentas laikinas, vector<studentas> &grupe)
-{ifstream myfile(failo_kelias);
+{
+    
+    auto start_1 = high_resolution_clock::now();
+    ifstream myfile(failo_kelias);
     int count_nd_words = 0;
     
     if(myfile.fail() == true) {cout<<"nepavyko atidaryti failo"<<endl;
@@ -181,11 +202,15 @@ void failo_skaitymas(string failo_kelias, struct studentas laikinas, vector<stud
     }
     
     myfile.close();
+    auto end_1 = high_resolution_clock::now();
+    duration<double> diff_1 = end_1-start_1;
+    std::cout << "Failo iš " + to_string(grupe.size()) + " įrašų nuskaitinėjimo laikas: "<< diff_1.count() << " s\n";
+    
 }
 
 void isrusiuotas_spausdinimas(vector<studentas> vargsiukai, vector<studentas> gudruciai) {
     
-    
+    auto start = high_resolution_clock::now();
     ofstream failas("vargsiukai.txt");
     if(!failas) {std::cerr<<"Failo klaida"<<endl;}
     
@@ -195,7 +220,11 @@ void isrusiuotas_spausdinimas(vector<studentas> vargsiukai, vector<studentas> gu
         failas<<left<<setw(20)<<a.vard<<left<<setw(20)<<a.pavard<<left<<setw(10)<<fixed<<setprecision(2)<<a.rez<<endl;
     }
     failas.close();
+    auto end = high_resolution_clock::now();
+    duration<double> diff = end-start;
+    std::cout << "Vargšiukų įrašymo į failą laikas: "<< diff.count() << " s\n";
     
+    auto start_2 = high_resolution_clock::now();
     ofstream g_failas("gudruciai.txt");
     if(!g_failas) {std::cerr<<"Failo klaida"<<endl;}
     
@@ -205,7 +234,9 @@ void isrusiuotas_spausdinimas(vector<studentas> vargsiukai, vector<studentas> gu
         g_failas<<left<<setw(20)<<a.vard<<left<<setw(20)<<a.pavard<<left<<setw(10)<<fixed<<setprecision(2)<<a.rez<<endl;
     }
     g_failas.close();
-    
+    auto end_2 = high_resolution_clock::now();
+    duration<double> diff_2 = end_2-start_2;
+    std::cout << "Gudručių įrašymo į failą laikas: "<< diff_2.count() << " s\n";
     
 }
 
