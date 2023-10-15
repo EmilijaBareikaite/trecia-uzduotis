@@ -5,7 +5,7 @@
 
 Šioje programoje taip pat skaičiuojamas tam tikrų žingsnių laikas: failo generavimui, failo nuskaitymui, išrūšiavimui(pateiktas failas, rūšiuojamas į gudručius (galutinis rezultatas >= 5) ir vargšiukus(galutinis rezultatas < 5)). Todėl buvo atlikta analizė su 5 skirtingų dydžių failais - 1000, 10000, 100000, 1000000, 10000000. 
 
-**Analizės eiga:** buvo kuriamas vienas tam tikro dydžio (tačiau visuose failuose buvo 5 namų darbų rezultatai) failas ir buvo išmatuotajamas jo sukūrimo laikas. Tuomet tas pats failas 3 kartus buvo nuskaitomas, išrūšiuojmas ir vėliau iš jo spausdinami 2 nauji failai. Gavus visus skaičiavimas, buvo vedami vidurkiai 100-tųjų tikslumu (jie ir bus pateikiami išvadose).
+**Analizės eiga:** buvo kuriamas vienas tam tikro dydžio (tačiau visuose failuose buvo 5 namų darbų rezultatai) failas ir buvo išmatuotajamas jo sukūrimo laikas. Tuomet tas pats failas 5 kartus buvo nuskaitomas, išrūšiuojmas ir vėliau iš jo spausdinami 2 nauji failai. Gavus visus skaičiavimas, buvo vedami vidurkiai 100-tųjų tikslumu (jie ir bus pateikiami išvadose).
 
 **Analizės išvados:**
 
