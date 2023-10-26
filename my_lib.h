@@ -120,7 +120,53 @@ template <class T1> void rusiavimas_dv_gr(T1 grupe, T1 &vargsiukai, T1 &gudrucia
     cout << to_string(grupe.size()) + " įrašų dalijimo i dvi grupes laikas: "<< diff_2.count() << " s\n";
 }
 
-void failo_skaitymas(string failo_kelias, struct studentas laikinas, vector<studentas> &grupe);
+template <class T1, class T2, class T3> void failo_skaitymas(T1 failo_kelias, T2 laikinas, T3 &grupe){
+    auto start_1 = high_resolution_clock::now();
+    ifstream myfile(failo_kelias);
+    int count_nd_words = 0;
+    
+    if(myfile.fail() == true) {cout<<"nepavyko atidaryti failo"<<endl;
+    }
+    
+    string eilute;
+    
+    for (int i = 0; i<1; i++) getline(myfile,eilute);
+    
+    istringstream iss(eilute);
+    string zodis;
+    
+    while (iss >> zodis) {
+        if (zodis.substr(0, 2) == "ND") count_nd_words++;
+    }
+    
+    while(myfile >> laikinas.vard >> laikinas.pavard) {
+        
+        for(int i=0; i<count_nd_words; i++)
+        {
+            int nd_skaicius;
+            
+            if (!(myfile >> nd_skaicius)) throw std::invalid_argument("Pažymys nėra sveikas skaičius. Pataisykite failą");
+            
+            if (nd_skaicius>10 || nd_skaicius <=0) throw std::invalid_argument("Pažymys nėra sveikas teigiamas skaičius tarp 1 ir 10. Pataisykite failą.");
+            
+            laikinas.paz.push_back(nd_skaicius);
+        }
+        
+        myfile>> laikinas.egz;
+        if (!myfile >> laikinas.egz) throw std::invalid_argument("Egzaminas nėra sveikas skaičius. Pataisykite failą");
+        
+        else if (laikinas.egz>10 || laikinas.egz <=0) throw std::invalid_argument("Egzaminas nėra sveikas teigiamas skaičius tarp 1 ir 10. Pataisykite failą.");
+        
+        laikinas.rez = gal_vid(laikinas.paz, laikinas.egz);
+        grupe.push_back(laikinas);
+        laikinas.paz.clear();
+    }
+    
+    myfile.close();
+    auto end_1 = high_resolution_clock::now();
+    duration<double> diff_1 = end_1-start_1;
+    std::cout << "Failo iš " + to_string(grupe.size()) + " įrašų nuskaitinėjimo laikas: "<< diff_1.count() << " s\n";
+};
 void isrusiuotas_spausdinimas(vector<studentas> vargsiukai, vector<studentas> gudruciai);
 void egzamino_tikrinimas(int& egz, struct studentas laikinas);
 
