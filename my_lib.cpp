@@ -41,16 +41,7 @@ float count_median_l(list<int>& pazymiai) {
     }
 }
 
-float gal_vid(vector<int> pazymiai, int egzaminas) {
-    float vidurkis, suma = 0;
-    float rez;
-    for (int i = 0; i < pazymiai.size(); i++) {
-        suma = suma + pazymiai.at(i);
-    }
-    vidurkis = suma / pazymiai.size();
-    rez = 0.4 * vidurkis + 0.6 * egzaminas;
-    return rez;
-}
+
 
 void isvedimas_v(vector<studentas> grupe) {
     printf("%-25s%-20s%-15s\n", "Pavardė","Vardas","Galutinis (Vid.)" );

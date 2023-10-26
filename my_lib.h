@@ -52,17 +52,52 @@ struct studentas {
     }
 };
 
+struct l_studentas {
+    string vard, pavard;
+    list <int> paz;
+    int egz;
+    float vidurkis, rez, mediana;
+    int rusiavimas;
+    
+    bool operator<(const l_studentas& other) const{
+        
+        if(rusiavimas==1) {
+            if (vard != other.vard) {
+                return vard < other.vard;
+            }
+            return pavard < other.pavard;
+        }
+        else if (rusiavimas==2) {
+            if (pavard != other.pavard) {
+                return pavard < other.pavard;
+            }
+            return vard < other.vard;
+        }
+        else {return rez <other.rez;}
+    }
+};
 
-int generate_random_mark();
-float count_median(vector<int> pazymiai);
-float gal_vid(vector<int> pazymiai, int egzaminas);
+template <class T1, class T2> float gal_vid(const T1 &pazymiai, T2 &egzaminas) {
+    float vidurkis, suma = 0;
+    float rez;
+    for (const auto &pazymys : pazymiai) {
+        suma += pazymys;
+    }
+    vidurkis = suma / pazymiai.size();
+    rez = 0.4 * vidurkis + 0.6 * egzaminas;
+    return rez;
+}
+
 void isvedimas_v(vector<studentas> grupe);
 void isvedimas_m(vector<studentas> grupe);
-void mokiniu_sk_patikrinimas(int& m);
-void budo_patikrinimas(char& budas);
 void egzamino_tikrinimas(int& egz, struct studentas laikinas);
-void a_paz_tikrinimas(int& a_paz_kiekis);
-void Generavimas_failo(int skaic);
 void failo_skaitymas(string failo_kelias, struct studentas laikinas, vector<studentas> &grupe);
 void isrusiuotas_spausdinimas(vector<studentas> vargsiukai, vector<studentas> gudruciai);
+
 float count_median_l(list<int>& pazymiai) ;
+int generate_random_mark();
+float count_median(vector<int> pazymiai);
+void Generavimas_failo(int skaic);
+void a_paz_tikrinimas(int& a_paz_kiekis);
+void mokiniu_sk_patikrinimas(int& m);
+void budo_patikrinimas(char& budas);
