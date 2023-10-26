@@ -25,6 +25,22 @@ float count_median(vector<int> pazymiai) //funkcija skaiciuoja mediana
     return mediana;
 }
 
+float count_median_l(list<int>& pazymiai) {
+
+    int size = pazymiai.size();
+    auto it = pazymiai.begin();
+    advance(it, size/2); // Move the iterator to the middle element
+
+    if (size % 2 == 0) {
+        int med1 = *it;
+        --it;
+        int med2 = *it;
+        return static_cast<float>(med1 + med2) / 2.0;
+    } else {
+        return static_cast<float>(*it);
+    }
+}
+
 float gal_vid(vector<int> pazymiai, int egzaminas) {
     float vidurkis, suma = 0;
     float rez;

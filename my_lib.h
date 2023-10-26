@@ -9,6 +9,7 @@
 #include <sstream>
 #include <chrono>
 #include <random>
+#include <list>
 
 using std::cout;
 using std::cin;
@@ -23,6 +24,7 @@ using std::ifstream;
 using std::ofstream;
 using std::istringstream;
 using std::to_string;
+using std::list;
 using namespace std::chrono;
 
 struct studentas {
@@ -63,3 +65,4 @@ void a_paz_tikrinimas(int& a_paz_kiekis);
 void Generavimas_failo(int skaic);
 void failo_skaitymas(string failo_kelias, struct studentas laikinas, vector<studentas> &grupe);
 void isrusiuotas_spausdinimas(vector<studentas> vargsiukai, vector<studentas> gudruciai);
+float count_median_l(list<int>& pazymiai) ;
