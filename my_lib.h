@@ -88,7 +88,16 @@ template <class T1, class T2> float gal_vid(const T1 &pazymiai, T2 &egzaminas) {
     return rez;
 }
 
-void isvedimas_v(vector<studentas> grupe);
+template <class T> void isvedimas_v(T grupe)
+ {
+    printf("%-25s%-20s%-15s\n", "Pavardė","Vardas","Galutinis (Vid.)" );
+    cout<<"----------------------------------------------------------------"<<endl;
+    for (auto &a: grupe)
+    {
+        cout<<left<<setw(24)<<a.pavard<<left<<setw(20)<<a.vard<<left<<setw(15)<<fixed<<setprecision(2)<<a.rez<<endl;
+    }
+}
+
 void isvedimas_m(vector<studentas> grupe);
 void egzamino_tikrinimas(int& egz, struct studentas laikinas);
 void failo_skaitymas(string failo_kelias, struct studentas laikinas, vector<studentas> &grupe);

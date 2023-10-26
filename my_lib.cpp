@@ -43,15 +43,6 @@ float count_median_l(list<int>& pazymiai) {
 
 
 
-void isvedimas_v(vector<studentas> grupe) {
-    printf("%-25s%-20s%-15s\n", "Pavardė","Vardas","Galutinis (Vid.)" );
-    cout<<"----------------------------------------------------------------"<<endl;
-    for (auto &a: grupe)
-    {
-        cout<<left<<setw(24)<<a.pavard<<left<<setw(20)<<a.vard<<left<<setw(15)<<fixed<<setprecision(2)<<a.rez<<endl;
-    }
-}
-
 void isvedimas_m(vector<studentas> grupe) {
     printf("%-25s%-20s%-15s\n", "Pavardė","Vardas","Galutinis (Med.)" );
     cout<<"----------------------------------------------------------------"<<endl;
