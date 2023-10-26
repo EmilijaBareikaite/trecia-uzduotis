@@ -98,7 +98,16 @@ template <class T> void isvedimas_v(T grupe)
     }
 }
 
-void isvedimas_m(vector<studentas> grupe);
+template <class T> void isvedimas_m(T grupe) {
+
+    printf("%-25s%-20s%-15s\n", "Pavardė","Vardas","Galutinis (Med.)" );
+    cout<<"----------------------------------------------------------------"<<endl;
+    for (auto &a: grupe)
+    {
+        cout<<left<<setw(24)<<a.pavard<<left<<setw(20)<<a.vard<<left<<setw(15)<<fixed<<setprecision(2)<<a.mediana<<endl;
+    }
+}
+
 void egzamino_tikrinimas(int& egz, struct studentas laikinas);
 void failo_skaitymas(string failo_kelias, struct studentas laikinas, vector<studentas> &grupe);
 void isrusiuotas_spausdinimas(vector<studentas> vargsiukai, vector<studentas> gudruciai);
