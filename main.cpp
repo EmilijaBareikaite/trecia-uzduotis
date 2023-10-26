@@ -112,14 +112,8 @@ int main() {
     
         sort(grupe.begin(), grupe.end());
         
-        auto start_2 = high_resolution_clock::now();
-        for (auto &a: grupe) {if (a.rez<5) vargsiukai.push_back(a);
-            else gudruciai.push_back(a);}
-        auto end_2 = high_resolution_clock::now();
-        duration<double> diff_2 = end_2-start_2;
-        cout << to_string(grupe.size()) + " įrašų dalijimo i dvi grupes laikas: "<< diff_2.count() << " s\n";
-        
-       
+        rusiavimas_dv_gr(grupe, vargsiukai, gudruciai);
+    
         isrusiuotas_spausdinimas(vargsiukai, gudruciai);
 
     }

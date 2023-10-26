@@ -108,9 +108,21 @@ template <class T> void isvedimas_m(T grupe) {
     }
 }
 
-void egzamino_tikrinimas(int& egz, struct studentas laikinas);
+template <class T1> void rusiavimas_dv_gr(T1 grupe, T1 &vargsiukai, T1 &gudruciai) {
+    auto start_2 = high_resolution_clock::now();
+    
+    for (auto &a: grupe) {if (a.rez<5) vargsiukai.push_back(a);
+        else gudruciai.push_back(a);}
+    
+    auto end_2 = high_resolution_clock::now();
+    
+    duration<double> diff_2 = end_2-start_2;
+    cout << to_string(grupe.size()) + " įrašų dalijimo i dvi grupes laikas: "<< diff_2.count() << " s\n";
+}
+
 void failo_skaitymas(string failo_kelias, struct studentas laikinas, vector<studentas> &grupe);
 void isrusiuotas_spausdinimas(vector<studentas> vargsiukai, vector<studentas> gudruciai);
+void egzamino_tikrinimas(int& egz, struct studentas laikinas);
 
 float count_median_l(list<int>& pazymiai) ;
 int generate_random_mark();
