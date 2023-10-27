@@ -196,7 +196,19 @@ template <class T1> void isrusiuotas_spausdinimas(T1 vargsiukai, T1 gudruciai) {
     std::cout << "Gudručių įrašymo į failą laikas: "<< diff_2.count() << " s\n";
     }
 
-void egzamino_tikrinimas(int& egz, struct studentas laikinas);
+template <class T> void egzamino_tikrinimas(int& egz, T laikinas) {
+    try {if (cin.fail() || egz <= 0 || egz>10) throw std::invalid_argument("Netinkamai įvesta. Prašome įvesti teigiamą sveiką skaičių tarp 1 ir 10");
+    }
+    catch (const std::invalid_argument& e) {
+        std::cerr<< e.what()<<endl;
+        cin.clear();
+        cin.ignore(256, '\n');
+        cout<<"Įveskite iš naujo: ";
+        cin>>egz;
+        laikinas.egz = egz;
+        egzamino_tikrinimas(egz, laikinas);
+    }
+}
 
 float count_median_l(list<int>& pazymiai) ;
 int generate_random_mark();
