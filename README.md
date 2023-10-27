@@ -34,8 +34,11 @@ _List konteinerio atveju_
 **Palyginimas**: matoma, kad, kai failai yra sudaryti iš 1000 arba 10000 studentų, su list konteineriu programa veikia sparčiau arba taip pat, tačiau jau didėjant studentų kiekiui (esant 100000, 1000000, 10000000 studentų) programa veikia sparčiau su vector konteineriu.
 
 **Kompiuterio duomenys**:
+
 CPU - Apple M1 chip 8-core CPU with 4 perform­ance cores and 4 efficiency cores
+
 RAM - 8 GB 
+
 HDD - 256 GB SSD
 
 Output, kai suvedami duomenys
