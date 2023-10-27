@@ -15,89 +15,160 @@ int main() {
         cout << "Ar studentų duomenis norite nuskaityti iš failo, ar norite suvedinėti, ar norite generuoti failus? Spauskite 'f', jei iš failo, 's', jei norite suvedinėti, 'g', jei generuoti. ";
         cin >> suvedimas;
     
-    if (suvedimas == 's') {
-        
-        int m;
-        cout << "Kiek studentų mokosi? ";
-        cin >> m;
-    
-        mokiniu_sk_patikrinimas(m);
-        
-        if (m == 0) throw std::runtime_error("Programa baigė darbą, nes nėra studentų.");
-        
-        char budas;
-        cout << "Ar norite suvesti studentų pažymius ir egzamino rezultatą automatiškai ar mechaniškai? Rašykite 'a', jei automatiškai ir 'm', jei mechaniškai.  ";
-        cin >> budas;
-        budo_patikrinimas(budas);
-            
+        if (suvedimas == 's')
+        {
+                int m;
+                cout << "Kiek studentų mokosi? ";
+                cin >> m;
+                mokiniu_sk_patikrinimas(m);
+                if (m == 0) throw std::runtime_error("Programa baigė darbą, nes nėra studentų.");
+                
+                char budas;
+                cout << "Ar norite suvesti studentų pažymius ir egzamino rezultatą automatiškai ar mechaniškai? Rašykite 'a', jei automatiškai ir 'm', jei mechaniškai.  ";
+                cin >> budas;
+                budo_patikrinimas(budas);
+                
             for (int j = 0; j < m; j++)
-            {
-                cout<<"Įveskite studento vardą ir pavardę: ";
-                cin>>laikinas.vard>>laikinas.pavard;
-                
-                if (budas == 'm') {
-                    int k;
-                    cout<<"Įveskite studento pažymį (parašę '-2' baigsite vesti studento pažymius): ";
-                    cin>>k;
-                    if (k==-2) throw std::runtime_error("Neįvėdete nei vieno pažymio. Programa nutraukta, nes negalima dalyba iš nulio.");
-                
-                    if ((cin.fail() || k <= 0 || k>10) && k!=-2) throw std::invalid_argument("Netinkamai įvesta. Prašome įvesti teigiamą sveiką skaičių tarp 1 ir 10");
-                    
-                        int n = 0;
-                        while ( k != -2)
-                        {
-                            n++;
-                            laikinas.paz.push_back(k);
-                            cout<<"Įveskite studento pažymį (parašę '-2' baigsite vesti studento pažymius):  ";
+                {
+                    if(tipas=='v')
+                    {
+                        cout<<"Įveskite studento vardą ir pavardę: ";
+                        cin>>laikinas.vard>>laikinas.pavard;
                         
+                        if (budas == 'm')
+                        {
+                            int k;
+                            cout<<"Įveskite studento pažymį (parašę '-2' baigsite vesti studento pažymius): ";
                             cin>>k;
+                            if (k==-2) throw std::runtime_error("Neįvėdete nei vieno pažymio. Programa nutraukta, nes negalima dalyba iš nulio.");
+                            
                             if ((cin.fail() || k <= 0 || k>10) && k!=-2) throw std::invalid_argument("Netinkamai įvesta. Prašome įvesti teigiamą sveiką skaičių tarp 1 ir 10");
                             
+                            int n = 0;
+                            while ( k != -2)
+                            {
+                                n++;
+                                laikinas.paz.push_back(k);
+                                cout<<"Įveskite studento pažymį (parašę '-2' baigsite vesti studento pažymius):  ";
+                                
+                                cin>>k;
+                                if ((cin.fail() || k <= 0 || k>10) && k!=-2) throw std::invalid_argument("Netinkamai įvesta. Prašome įvesti teigiamą sveiką skaičių tarp 1 ir 10");
+                                
+                            }
+                            
+                            cout<<"Įveskite egzamino rezultatą: ";
+                            cin>>laikinas.egz;
+                            egzamino_tikrinimas(laikinas.egz, laikinas);
+                            
+                            laikinas.rez = gal_vid(laikinas.paz, laikinas.egz);
+                            laikinas.mediana = count_median(laikinas.paz);
+                            
+                            grupe.push_back(laikinas);
+                            laikinas.paz.clear();
                         }
-                    
-                    cout<<"Įveskite egzamino rezultatą: ";
-                    cin>>laikinas.egz;
-                    egzamino_tikrinimas(laikinas.egz, laikinas);
-                    
-                    laikinas.rez = gal_vid(laikinas.paz, laikinas.egz);
-                    laikinas.mediana = count_median(laikinas.paz);
-                    
-                    grupe.push_back(laikinas);
-                    laikinas.paz.clear();
+                        else if (budas == 'a')
+                        {
+                            cout << "Kiek pažymių turės studentas? ";
+                            int a_paz_kiekis;
+                            cin >> a_paz_kiekis;
+                            a_paz_tikrinimas(a_paz_kiekis);
+                            
+                            
+                            for (int u=0; u<a_paz_kiekis; u++) laikinas.paz.push_back(generate_random_mark());
+                            
+                            sort(laikinas.paz.begin(), laikinas.paz.end());
+                            
+                            laikinas.egz = generate_random_mark();
+                            laikinas.rez = gal_vid(laikinas.paz, laikinas.egz);
+                            laikinas.mediana = count_median(laikinas.paz);
+                            
+                            grupe.push_back(laikinas);
+                            laikinas.paz.clear();
+                        }
+                        
+                    }
+                    else if (tipas=='l')
+                    {
+                        cout<<"Įveskite studento vardą ir pavardę: ";
+                        cin>>l_laikinas.vard>>l_laikinas.pavard;
+                        
+                        if (budas == 'm')
+                        {
+                            int k;
+                            cout<<"Įveskite studento pažymį (parašę '-2' baigsite vesti studento pažymius): ";
+                            cin>>k;
+                            if (k==-2) throw std::runtime_error("Neįvėdete nei vieno pažymio. Programa nutraukta, nes negalima dalyba iš nulio.");
+                            
+                            if ((cin.fail() || k <= 0 || k>10) && k!=-2) throw std::invalid_argument("Netinkamai įvesta. Prašome įvesti teigiamą sveiką skaičių tarp 1 ir 10");
+                            
+                            int n = 0;
+                            while ( k != -2)
+                            {
+                                n++;
+                                l_laikinas.paz.push_back(k);
+                                cout<<"Įveskite studento pažymį (parašę '-2' baigsite vesti studento pažymius):  ";
+                                
+                                cin>>k;
+                                if ((cin.fail() || k <= 0 || k>10) && k!=-2) throw std::invalid_argument("Netinkamai įvesta. Prašome įvesti teigiamą sveiką skaičių tarp 1 ir 10");
+                                
+                            }
+                            
+                            cout<<"Įveskite egzamino rezultatą: ";
+                            cin>>l_laikinas.egz;
+                            egzamino_tikrinimas(l_laikinas.egz, l_laikinas);
+                            
+                            l_laikinas.rez = gal_vid(l_laikinas.paz, l_laikinas.egz);
+                            l_laikinas.mediana = count_median_l(l_laikinas.paz);
+                            
+                            l_grupe.push_back(l_laikinas);
+                            l_laikinas.paz.clear();
+                        }
+                        else if (budas == 'a')
+                            {
+                                cout << "Kiek pažymių turės studentas? ";
+                                int a_paz_kiekis;
+                                cin >> a_paz_kiekis;
+                                a_paz_tikrinimas(a_paz_kiekis);
+                                
+                                for (int u=0; u<a_paz_kiekis; u++) l_laikinas.paz.push_back(generate_random_mark());
+                                 
+                                 l_laikinas.paz.sort();
+                                 
+                                 l_laikinas.egz = generate_random_mark();
+                                 l_laikinas.rez = gal_vid(l_laikinas.paz, l_laikinas.egz);
+                                 l_laikinas.mediana = count_median_l(l_laikinas.paz);
+                                 
+                                 l_grupe.push_back(l_laikinas);
+                                 l_laikinas.paz.clear();
+                            }
+
+                        
+                    }
+                    else throw std::invalid_argument("Netinkamai įvesta, prašome įvesti arba 'm' arba 'a': ");
                 }
+            
+                char spausd;
+                cout<<"Ar norite, kad rodytų studentų galutinį vidurkį ar medianą? Rašykite 'v', jeigu norite vidurkio, ir 'm', jeigu norite medianos. ";
+                cin>>spausd;
                 
-                else if (budas == 'a')
-                {
-                    cout << "Kiek pažymių turės studentas? ";
+                if (tipas=='v')
+                        {
+                            sort(grupe.begin(), grupe.end());
                     
-                    int a_paz_kiekis;
-                    cin >> a_paz_kiekis;
-                    
-                    a_paz_tikrinimas(a_paz_kiekis);
-                    
-                    for (int u=0; u<a_paz_kiekis; u++) laikinas.paz.push_back(generate_random_mark());
-                    
-                    sort(laikinas.paz.begin(), laikinas.paz.end());
-                    
-                    laikinas.egz = generate_random_mark();
-                    laikinas.rez = gal_vid(laikinas.paz, laikinas.egz);
-                    laikinas.mediana = count_median(laikinas.paz);
-                    
-                    grupe.push_back(laikinas);
-                    laikinas.paz.clear();
-                }
-                else throw std::invalid_argument("Netinkamai įvesta, prašome įvesti arba 'm' arba 'a': ");
+                            if (spausd == 'v') isvedimas_v(grupe);
+                            else if (spausd == 'm') isvedimas_m(grupe);
+                            else throw std::runtime_error("Netinkamas atsakymas suvedimui. Prašome įvesti 'm' arba 'v'.");
+                        }
+                
+                else if(tipas=='l')
+                        {
+                            l_grupe.sort();
+                            if (spausd == 'v') isvedimas_v(l_grupe);
+                            else if (spausd == 'm') isvedimas_m(l_grupe);
+                            else throw std::runtime_error("Netinkamas atsakymas suvedimui. Prašome įvesti 'm' arba 'v'.");
+                        }
             }
-        char spausd;
-        cout<<"Ar norite, kad rodytų studentų galutinį vidurkį ar medianą? Rašykite 'v', jeigu norite vidurkio, ir 'm', jeigu norite medianos. ";
-        cin>>spausd;
-        
-        sort(grupe.begin(), grupe.end());
-        
-        if (spausd == 'v') isvedimas_v(grupe);
-        else if (spausd == 'm') isvedimas_m(grupe);
-        else throw std::runtime_error("Netinkamas atsakymas suvedimui. Prašome įvesti 'm' arba 'v'.");
-        }
+            
     
     else if (suvedimas == 'f')
     {
