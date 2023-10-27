@@ -39,10 +39,11 @@ RAM - 8 GB
 HDD - 256 GB SSD
 
 Output, kai suvedami duomenys
-   <img width="879" alt="duomenu_suvedimo_pvz" src="https://github.com/EmilijaBareikaite/pirma-uzduotis/assets/145277411/281e7c9b-eb6c-4a25-9875-dde41baf4efd">
+<img width="896" alt="Duomenu_suvedimo_pvz" src="https://github.com/EmilijaBareikaite/pirma-uzduotis/assets/145277411/c95a1cb3-0d48-40ab-a401-992efbf64a96">  
 
 Output, kai generuojamas failas
-   <img width="887" alt="failo_generavimo_pvz" src="https://github.com/EmilijaBareikaite/pirma-uzduotis/assets/145277411/3ad276bd-dae2-4001-bd78-7f1d36a9e906">
+<img width="887" alt="failo_generavimo_pvz" src="https://github.com/EmilijaBareikaite/pirma-uzduotis/assets/145277411/3ad276bd-dae2-4001-bd78-7f1d36a9e906">
 
 Output, kai nuskaitomas failas
 <img width="890" alt="failo_nuskaitymo_pvz" src="https://github.com/EmilijaBareikaite/pirma-uzduotis/assets/145277411/54d8351c-eefd-4d63-ae1c-90ab619c015f">
+
