@@ -10,7 +10,7 @@ int generate_random_mark() //sugeneruojamas random skaic nuo 1 iki 10
         return random_number;
 }
 
-float count_median(vector<int> pazymiai) //funkcija skaiciuoja mediana
+float count_median(vector<int> pazymiai)
 {
     sort(pazymiai.begin(), pazymiai.end());
     float mediana;
@@ -29,7 +29,7 @@ float count_median_l(list<int>& pazymiai) {
 
     int size = pazymiai.size();
     auto it = pazymiai.begin();
-    advance(it, size/2); // Move the iterator to the middle element
+    advance(it, size/2);
 
     if (size % 2 == 0) {
         int med1 = *it;
@@ -101,9 +101,6 @@ void Generavimas_failo(int skaic)
     ofstream failas("studentai"+to_string(skaic)+".txt");
     
     if(!failas) {std::cerr<<"Failo klaida"<<endl;}
-
-    
-    
     
     failas <<left<<setw(20)<< "Vardas" <<left<<setw(20)<<"Pavarde";
     

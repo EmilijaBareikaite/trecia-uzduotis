@@ -3,9 +3,10 @@
 int main() {
     
     studentas laikinas;
-    vector <studentas> grupe;
-    vector <studentas> gudruciai;
-    vector <studentas> vargsiukai;
+    l_studentas l_laikinas;
+    vector <studentas> grupe, gudruciai, vargsiukai;
+    list <l_studentas> l_grupe, l_gudruciai, l_vargsiukai;
+    
     char suvedimas;
     try {
     cout << "Ar studentų duomenis norite nuskaityti iš failo, ar norite suvedinėti, ar norite generuoti failus? Spauskite 'f', jei iš failo, 's', jei norite suvedinėti, 'g', jei generuoti. ";
