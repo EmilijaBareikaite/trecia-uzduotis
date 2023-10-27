@@ -31,7 +31,18 @@ _List konteinerio atveju_
 |  Gudručių failo spausdinimo vidutinis laikas  | 0 s     |  0,03 s | 0,28 s | 2,64 s  |  31,20 s  |
 |  **Bendrai užtrukta**                             | **0,07 s** |  **0,53 s** | **4,88 s** | **47,94 s** |  **497,5 s** |
 
-**Palyginimas**: matoma, kad, kai failai yra sudaryti iš 1000 arba 10000 studentų, su list konteineriu programa veikia sparčiau arba taip pat, tačiau jau didėjant studentų kiekiui (esant 100000, 1000000, 10000000 studentų) programa veikia sparčiau su vector konteineriu. 
+**Palyginimas**: matoma, kad, kai failai yra sudaryti iš 1000 arba 10000 studentų, su list konteineriu programa veikia sparčiau arba taip pat, tačiau jau didėjant studentų kiekiui (esant 100000, 1000000, 10000000 studentų) programa veikia sparčiau su vector konteineriu.
 
-   
-   
+**Kompiuterio duomenys**:
+CPU - Apple M1 chip 8-core CPU with 4 perform­ance cores and 4 efficiency cores
+RAM - 8 GB 
+HDD - 256 GB SSD
+
+Output, kai suvedami duomenys
+   <img width="879" alt="duomenu_suvedimo_pvz" src="https://github.com/EmilijaBareikaite/pirma-uzduotis/assets/145277411/281e7c9b-eb6c-4a25-9875-dde41baf4efd">
+
+Output, kai generuojamas failas
+   <img width="887" alt="failo_generavimo_pvz" src="https://github.com/EmilijaBareikaite/pirma-uzduotis/assets/145277411/3ad276bd-dae2-4001-bd78-7f1d36a9e906">
+
+Output, kai nuskaitomas failas
+<img width="890" alt="failo_nuskaitymo_pvz" src="https://github.com/EmilijaBareikaite/pirma-uzduotis/assets/145277411/54d8351c-eefd-4d63-ae1c-90ab619c015f">
