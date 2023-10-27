@@ -9,8 +9,11 @@ int main() {
     
     char suvedimas;
     try {
-    cout << "Ar studentų duomenis norite nuskaityti iš failo, ar norite suvedinėti, ar norite generuoti failus? Spauskite 'f', jei iš failo, 's', jei norite suvedinėti, 'g', jei generuoti. ";
-    cin >> suvedimas;
+        char tipas;
+        cout<< "Ar programa turi dirbti su vector, ar su list? Spausk 'v', jei su vector, 'l' - su list. ";
+        cin>>tipas;
+        cout << "Ar studentų duomenis norite nuskaityti iš failo, ar norite suvedinėti, ar norite generuoti failus? Spauskite 'f', jei iš failo, 's', jei norite suvedinėti, 'g', jei generuoti. ";
+        cin >> suvedimas;
     
     if (suvedimas == 's') {
         
@@ -96,27 +99,39 @@ int main() {
         else throw std::runtime_error("Netinkamas atsakymas suvedimui. Prašome įvesti 'm' arba 'v'.");
         }
     
-    else if (suvedimas == 'f') {
-        
+    else if (suvedimas == 'f')
+    {
         string failo_kelias;
         cout<< "Jūsų failo kelias: ";
         cin>> failo_kelias;
         
-    
-        failo_skaitymas(failo_kelias, laikinas, grupe);
-        
         int atsakymas;
         cout<<"Pagal ką rūšiuoti vargšiukų ir gudručių failus? 1 - pagal vardą, 2 - pagal pavardę, 3 -  pagal rezultatą. ";
         cin>>atsakymas;
-        
-        for (auto &a: grupe) {a.rusiavimas=atsakymas;}
     
-        sort(grupe.begin(), grupe.end());
-        
-        rusiavimas_dv_gr(grupe, vargsiukai, gudruciai);
+        if (tipas=='v')
+        {
+            failo_skaitymas(failo_kelias, laikinas, grupe);
+            
+            for (auto &a: grupe) {a.rusiavimas=atsakymas;}
+            
+            sort(grupe.begin(), grupe.end());
+            
+            rusiavimas_dv_gr(grupe, vargsiukai, gudruciai);
+            isrusiuotas_spausdinimas(vargsiukai, gudruciai);
+        }
     
-        isrusiuotas_spausdinimas(vargsiukai, gudruciai);
-
+        else if (tipas == 'l')
+        {
+            failo_skaitymas(failo_kelias, l_laikinas, l_grupe);
+            
+            for (auto &a: l_grupe) {a.rusiavimas=atsakymas;}
+            
+            l_grupe.sort();
+            
+            rusiavimas_dv_gr(l_grupe, l_vargsiukai, l_gudruciai);
+            isrusiuotas_spausdinimas(l_vargsiukai, l_gudruciai);
+        }
     }
     
     else if (suvedimas =='g')
