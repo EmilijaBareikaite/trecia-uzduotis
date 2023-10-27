@@ -25,11 +25,11 @@ _List konteinerio atveju_
 |                                               |  1000   |  10000  | 100000 | 1000000 | 10000000  |
 | --------------------------------------------- |:-------:|:-------:|:------:|:-------:|:---------:|
 |  Failo generavimo laikas                      | 0,06 s  |  0,42 s | 3,95 s | 39,42 s |  396,06 s |
-|  Failo nuskaitymo vidutinis laikas            | 0,01 s     |  0,05 s | 0,39 s | 3,5 s   |  38,4 s   |
-|  Failo išrūšiavimo vidutinis laikas           | 0 s     |  0,01 s | 0,08 s | 0,49 s  |  10,92 s  |
-|  Vargšiukų failo spausdinimo vidutinis laikas | 0 s     |  0,02 s | 0,19 s | 1,89 s  |  20,93 s  |
-|  Gudručių failo spausdinimo vidutinis laikas  | 0 s     |  0,03 s | 0,28 s | 2,64 s  |  31,20 s  |
-|  **Bendrai užtrukta**                             | **0,07 s** |  **0,53 s** | **4,88 s** | **47,94 s** |  **497,5 s** |
+|  Failo nuskaitymo vidutinis laikas            | 0,01 s     |  0,05 s | 0,39 s | 3,78 s   |  38,4 s   |
+|  Failo išrūšiavimo vidutinis laikas           | 0 s     |  0,01 s | 0,08 s | 0,93 s  |  10,92 s  |
+|  Vargšiukų failo spausdinimo vidutinis laikas | 0 s     |  0,02 s | 0,19 s | 1,99 s  |  20,93 s  |
+|  Gudručių failo spausdinimo vidutinis laikas  | 0 s     |  0,03 s | 0,28 s | 2,75 s  |  31,20 s  |
+|  **Bendrai užtrukta**                             | **0,07 s** |  **0,53 s** | **4,88 s** | **48,87 s** |  **497,5 s** |
 
 **Palyginimas**: matoma, kad, kai failai yra sudaryti iš 1000 arba 10000 studentų, su list konteineriu programa veikia sparčiau arba taip pat, tačiau jau didėjant studentų kiekiui (esant 100000, 1000000, 10000000 studentų) programa veikia sparčiau su vector konteineriu.
 
