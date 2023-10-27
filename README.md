@@ -41,7 +41,10 @@ RAM - 8 GB
 
 HDD - 256 GB SSD
 
-Output, kai suvedami duomenys
+Output, kai suvedami mechaniškai duomenys
+<img width="883" alt="duomenu_mechaninis_suvedimas" src="https://github.com/EmilijaBareikaite/pirma-uzduotis/assets/145277411/8b1b4286-e600-43e3-a5dc-3bf6ba5920f8">
+
+Output, kai suvedami automatiškai duomenys
 <img width="896" alt="Duomenu_suvedimo_pvz" src="https://github.com/EmilijaBareikaite/pirma-uzduotis/assets/145277411/c95a1cb3-0d48-40ab-a401-992efbf64a96">  
 
 Output, kai generuojamas failas
@@ -49,4 +52,5 @@ Output, kai generuojamas failas
 
 Output, kai nuskaitomas failas
 <img width="890" alt="failo_nuskaitymo_pvz" src="https://github.com/EmilijaBareikaite/pirma-uzduotis/assets/145277411/54d8351c-eefd-4d63-ae1c-90ab619c015f">
+
 
