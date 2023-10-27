@@ -167,7 +167,35 @@ template <class T1, class T2, class T3> void failo_skaitymas(T1 failo_kelias, T2
     duration<double> diff_1 = end_1-start_1;
     std::cout << "Failo iš " + to_string(grupe.size()) + " įrašų nuskaitinėjimo laikas: "<< diff_1.count() << " s\n";
 };
-void isrusiuotas_spausdinimas(vector<studentas> vargsiukai, vector<studentas> gudruciai);
+template <class T1> void isrusiuotas_spausdinimas(T1 vargsiukai, T1 gudruciai) {auto start = high_resolution_clock::now();
+    ofstream failas("vargsiukai.txt");
+    if(!failas) {std::cerr<<"Failo klaida"<<endl;}
+    
+    failas <<left<<setw(20)<< "Vardas" <<left<<setw(20)<<"Pavarde"<<left<<setw(10)<<"Galutinis (Vid.)"<<endl;
+    failas<<"-----------------------------------------------------"<<endl;
+    for (auto &a: vargsiukai) {
+        failas<<left<<setw(20)<<a.vard<<left<<setw(20)<<a.pavard<<left<<setw(10)<<fixed<<setprecision(2)<<a.rez<<endl;
+    }
+    failas.close();
+    auto end = high_resolution_clock::now();
+    duration<double> diff = end-start;
+    std::cout << "Vargšiukų įrašymo į failą laikas: "<< diff.count() << " s\n";
+    
+    auto start_2 = high_resolution_clock::now();
+    ofstream g_failas("gudruciai.txt");
+    if(!g_failas) {std::cerr<<"Failo klaida"<<endl;}
+    
+    g_failas <<left<<setw(20)<< "Vardas" <<left<<setw(20)<<"Pavarde"<<left<<setw(10)<<"Galutinis (Vid.)"<<endl;
+    g_failas<<"-----------------------------------------------------"<<endl;
+    for (auto &a: gudruciai) {
+        g_failas<<left<<setw(20)<<a.vard<<left<<setw(20)<<a.pavard<<left<<setw(10)<<fixed<<setprecision(2)<<a.rez<<endl;
+    }
+    g_failas.close();
+    auto end_2 = high_resolution_clock::now();
+    duration<double> diff_2 = end_2-start_2;
+    std::cout << "Gudručių įrašymo į failą laikas: "<< diff_2.count() << " s\n";
+    }
+
 void egzamino_tikrinimas(int& egz, struct studentas laikinas);
 
 float count_median_l(list<int>& pazymiai) ;

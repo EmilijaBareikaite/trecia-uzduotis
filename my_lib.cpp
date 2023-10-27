@@ -141,36 +141,3 @@ void Generavimas_failo(int skaic)
 }
 
 
-void isrusiuotas_spausdinimas(vector<studentas> vargsiukai, vector<studentas> gudruciai) {
-    
-    auto start = high_resolution_clock::now();
-    ofstream failas("vargsiukai.txt");
-    if(!failas) {std::cerr<<"Failo klaida"<<endl;}
-    
-    failas <<left<<setw(20)<< "Vardas" <<left<<setw(20)<<"Pavarde"<<left<<setw(10)<<"Galutinis (Vid.)"<<endl;
-    failas<<"-----------------------------------------------------"<<endl;
-    for (auto &a: vargsiukai) {
-        failas<<left<<setw(20)<<a.vard<<left<<setw(20)<<a.pavard<<left<<setw(10)<<fixed<<setprecision(2)<<a.rez<<endl;
-    }
-    failas.close();
-    auto end = high_resolution_clock::now();
-    duration<double> diff = end-start;
-    std::cout << "Vargšiukų įrašymo į failą laikas: "<< diff.count() << " s\n";
-    
-    auto start_2 = high_resolution_clock::now();
-    ofstream g_failas("gudruciai.txt");
-    if(!g_failas) {std::cerr<<"Failo klaida"<<endl;}
-    
-    g_failas <<left<<setw(20)<< "Vardas" <<left<<setw(20)<<"Pavarde"<<left<<setw(10)<<"Galutinis (Vid.)"<<endl;
-    g_failas<<"-----------------------------------------------------"<<endl;
-    for (auto &a: gudruciai) {
-        g_failas<<left<<setw(20)<<a.vard<<left<<setw(20)<<a.pavard<<left<<setw(10)<<fixed<<setprecision(2)<<a.rez<<endl;
-    }
-    g_failas.close();
-    auto end_2 = high_resolution_clock::now();
-    duration<double> diff_2 = end_2-start_2;
-    std::cout << "Gudručių įrašymo į failą laikas: "<< diff_2.count() << " s\n";
-    
-}
-
-
