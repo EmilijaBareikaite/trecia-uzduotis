@@ -152,7 +152,8 @@ int main() {
                 cin>>spausd;
                 
                 if (tipas=='v')
-                        {
+                        {   
+                            for (auto &a: grupe) {a.rusiavimas=2;}
                             sort(grupe.begin(), grupe.end());
                     
                             if (spausd == 'v') isvedimas_v(grupe);
@@ -165,7 +166,9 @@ int main() {
                 
                 else if(tipas=='l')
                         {
+                            for (auto &a: l_grupe) {a.rusiavimas=2;}
                             l_grupe.sort();
+                            
                             if (spausd == 'v') isvedimas_v(l_grupe);
                             else if (spausd == 'm') isvedimas_m(l_grupe);
                             else throw std::runtime_error("Netinkamas atsakymas suvedimui. Prašome įvesti 'm' arba 'v'.");

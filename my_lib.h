@@ -10,6 +10,8 @@
 #include <chrono>
 #include <random>
 #include <list>
+#include <typeinfo>
+#include <type_traits>
 
 using std::cout;
 using std::cin;
@@ -33,6 +35,7 @@ struct studentas {
     int egz;
     float vidurkis, rez, mediana;
     int rusiavimas;
+    int paz_skaicius_index;
     
     bool operator<(const studentas& other) const{
         
@@ -51,7 +54,6 @@ struct studentas {
         else {return rez <other.rez;}
     }
 };
-
 struct l_studentas {
     string vard, pavard;
     list <int> paz;
@@ -77,6 +79,7 @@ struct l_studentas {
     }
 };
 
+
 template <class T1, class T2> float gal_vid(const T1 &pazymiai, T2 &egzaminas) {
     float vidurkis, suma = 0;
     float rez;
@@ -88,37 +91,10 @@ template <class T1, class T2> float gal_vid(const T1 &pazymiai, T2 &egzaminas) {
     return rez;
 }
 
-template <class T> void isvedimas_v(T grupe)
- {
-    printf("%-25s%-20s%-15s\n", "Pavardė","Vardas","Galutinis (Vid.)" );
-    cout<<"----------------------------------------------------------------"<<endl;
-    for (auto &a: grupe)
-    {
-        cout<<left<<setw(24)<<a.pavard<<left<<setw(20)<<a.vard<<left<<setw(15)<<fixed<<setprecision(2)<<a.rez<<endl;
-    }
-}
+float count_median(vector<int> pazymiai);
+float count_median_l(list<int>& pazymiai) ;
 
-template <class T> void isvedimas_m(T grupe) {
 
-    printf("%-25s%-20s%-15s\n", "Pavardė","Vardas","Galutinis (Med.)" );
-    cout<<"----------------------------------------------------------------"<<endl;
-    for (auto &a: grupe)
-    {
-        cout<<left<<setw(24)<<a.pavard<<left<<setw(20)<<a.vard<<left<<setw(15)<<fixed<<setprecision(2)<<a.mediana<<endl;
-    }
-}
-
-template <class T1> void rusiavimas_dv_gr(T1 grupe, T1 &vargsiukai, T1 &gudruciai) {
-    auto start_2 = high_resolution_clock::now();
-    
-    for (auto &a: grupe) {if (a.rez<5) vargsiukai.push_back(a);
-        else gudruciai.push_back(a);}
-    
-    auto end_2 = high_resolution_clock::now();
-    
-    duration<double> diff_2 = end_2-start_2;
-    cout << to_string(grupe.size()) + " įrašų dalijimo i dvi grupes laikas: "<< diff_2.count() << " s\n";
-}
 
 template <class T1, class T2, class T3> void failo_skaitymas(T1 failo_kelias, T2 laikinas, T3 &grupe){
     auto start_1 = high_resolution_clock::now();
@@ -167,6 +143,19 @@ template <class T1, class T2, class T3> void failo_skaitymas(T1 failo_kelias, T2
     duration<double> diff_1 = end_1-start_1;
     std::cout << "Failo iš " + to_string(grupe.size()) + " įrašų nuskaitinėjimo laikas: "<< diff_1.count() << " s\n";
 };
+
+template <class T1> void rusiavimas_dv_gr(T1 grupe, T1 &vargsiukai, T1 &gudruciai) {
+    auto start_2 = high_resolution_clock::now();
+    
+    for (auto &a: grupe) {if (a.rez<5) vargsiukai.push_back(a);
+        else gudruciai.push_back(a);}
+    
+    auto end_2 = high_resolution_clock::now();
+    
+    duration<double> diff_2 = end_2-start_2;
+    cout << to_string(grupe.size()) + " įrašų dalijimo i dvi grupes laikas: "<< diff_2.count() << " s\n";
+}
+
 template <class T1> void isrusiuotas_spausdinimas(T1 vargsiukai, T1 gudruciai) {auto start = high_resolution_clock::now();
     ofstream failas("vargsiukai.txt");
     if(!failas) {std::cerr<<"Failo klaida"<<endl;}
@@ -196,6 +185,28 @@ template <class T1> void isrusiuotas_spausdinimas(T1 vargsiukai, T1 gudruciai) {
     std::cout << "Gudručių įrašymo į failą laikas: "<< diff_2.count() << " s\n";
     }
 
+template <class T> void isvedimas_v(T grupe)
+ {
+    printf("%-25s%-20s%-15s\n", "Pavardė","Vardas","Galutinis (Vid.)" );
+    cout<<"----------------------------------------------------------------"<<endl;
+    for (auto &a: grupe)
+    {
+        cout<<left<<setw(24)<<a.pavard<<left<<setw(20)<<a.vard<<left<<setw(15)<<fixed<<setprecision(2)<<a.rez<<endl;
+    }
+}
+
+template <class T> void isvedimas_m(T grupe) {
+
+    printf("%-25s%-20s%-15s\n", "Pavardė","Vardas","Galutinis (Med.)" );
+    cout<<"----------------------------------------------------------------"<<endl;
+    for (auto &a: grupe)
+    {
+        cout<<left<<setw(24)<<a.pavard<<left<<setw(20)<<a.vard<<left<<setw(15)<<fixed<<setprecision(2)<<a.mediana<<endl;
+    }
+}
+
+
+
 template <class T> void egzamino_tikrinimas(int& egz, T laikinas) {
     try {if (cin.fail() || egz <= 0 || egz>10) throw std::invalid_argument("Netinkamai įvesta. Prašome įvesti teigiamą sveiką skaičių tarp 1 ir 10");
     }
@@ -210,10 +221,15 @@ template <class T> void egzamino_tikrinimas(int& egz, T laikinas) {
     }
 }
 
-float count_median_l(list<int>& pazymiai) ;
-int generate_random_mark();
-float count_median(vector<int> pazymiai);
-void Generavimas_failo(int skaic);
 void a_paz_tikrinimas(int& a_paz_kiekis);
+void Generavimas_failo(int skaic);
+int generate_random_mark();
 void mokiniu_sk_patikrinimas(int& m);
 void budo_patikrinimas(char& budas);
+
+
+
+
+
+
+
