@@ -158,6 +158,9 @@ int main() {
                             if (spausd == 'v') isvedimas_v(grupe);
                             else if (spausd == 'm') isvedimas_m(grupe);
                             else throw std::runtime_error("Netinkamas atsakymas suvedimui. Prašome įvesti 'm' arba 'v'.");
+                            cout<<"Grupės objekto saugojimo atmintyje adresas: "<<&grupe<<endl;
+                            for(auto &student: grupe) {cout<<"Studento objekto saugojimo atmintyje adresas: "<<&student<<endl;}
+                            
                         }
                 
                 else if(tipas=='l')
@@ -166,6 +169,8 @@ int main() {
                             if (spausd == 'v') isvedimas_v(l_grupe);
                             else if (spausd == 'm') isvedimas_m(l_grupe);
                             else throw std::runtime_error("Netinkamas atsakymas suvedimui. Prašome įvesti 'm' arba 'v'.");
+                            cout<<"Grupės objekto saugojimo atmintyje adresas: "<<&l_grupe<<endl;
+                            for(auto &student: l_grupe) {cout<<"Studento objekto saugojimo atmintyje adresas: "<<&student<<endl;}
                         }
             }
             
@@ -212,8 +217,7 @@ int main() {
         cin >> failo_eilutes;
         
         if (cin.fail() && failo_eilutes<0) throw std::invalid_argument("Netinkamas atsakymas. Prašome įvesti teigiamą sveiką skaičių.");
-        
-       
+    
         Generavimas_failo(failo_eilutes);
         
     }
