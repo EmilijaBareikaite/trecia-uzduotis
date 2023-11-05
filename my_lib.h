@@ -156,6 +156,25 @@ template <class T1> void rusiavimas_dv_gr(T1 grupe, T1 &vargsiukai, T1 &gudrucia
     cout << to_string(grupe.size()) + " įrašų dalijimo i dvi grupes laikas: "<< diff_2.count() << " s\n";
 }
 
+template <class T1> void rusiavimas_dv_gr_2(T1 grupe, T1 &vargsiukai, T1 &gudruciai) {
+    auto start_2 = high_resolution_clock::now();
+    
+    for (auto it = grupe.begin(); it != grupe.end(); /* No increment here */) {
+            if (it->rez < 5) {
+                vargsiukai.push_back(*it);
+                it = grupe.erase(it); // Remove the student from grupe
+            } else {
+                ++it; // Increment the iterator when not erasing
+            }
+        }
+    gudruciai = grupe;
+    auto end_2 = high_resolution_clock::now();
+    
+    duration<double> diff_2 = end_2-start_2;
+    cout << to_string(grupe.size()) + " įrašų dalijimo i dvi grupes laikas: "<< diff_2.count() << " s\n";
+}
+
+
 template <class T1> void isrusiuotas_spausdinimas(T1 vargsiukai, T1 gudruciai) {auto start = high_resolution_clock::now();
     ofstream failas("vargsiukai.txt");
     if(!failas) {std::cerr<<"Failo klaida"<<endl;}
