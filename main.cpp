@@ -179,7 +179,7 @@ int main() {
         
         
         else if (suvedimas == 'f')
-        {   cout<<"Kuria strategija tikrinsim? Spausk 1, 2 arba 3";
+        {   cout<<"Kuria strategija tikrinsim? Spausk 1, 2 arba 3. ";
             cin>>strategija;
             
             
@@ -199,8 +199,18 @@ int main() {
                     
                     sort(grupe.begin(), grupe.end());
                     
-                    rusiavimas_dv_gr(grupe, vargsiukai, gudruciai);
-                    isrusiuotas_spausdinimas(vargsiukai, gudruciai);
+                    if (strategija==1) 
+                    {
+                        rusiavimas_dv_gr(grupe, vargsiukai, gudruciai);
+                        isrusiuotas_spausdinimas(vargsiukai, gudruciai);
+                    }
+                    else if (strategija==2)
+                        {
+                        rusiavimas_dv_gr_2(grupe, vargsiukai);
+                        isrusiuotas_spausdinimas(vargsiukai, grupe);
+                        }
+                    
+                    
                 }
                 
                 else if (tipas == 'l')
@@ -210,9 +220,9 @@ int main() {
                     for (auto &a: l_grupe) {a.rusiavimas=atsakymas;}
                     
                     l_grupe.sort();
-                    if (strategija==1) rusiavimas_dv_gr(l_grupe, l_vargsiukai, l_gudruciai);
                     
-                    else if (strategija==2) rusiavimas_dv_gr_2(l_grupe, l_vargsiukai, l_gudruciai);
+                    if (strategija==1) rusiavimas_dv_gr(l_grupe, l_vargsiukai, l_gudruciai);
+//                    else if (strategija==2) rusiavimas_dv_gr_2(l_grupe, l_vargsiukai);
                     
                     isrusiuotas_spausdinimas(l_vargsiukai, l_gudruciai);
                 }
