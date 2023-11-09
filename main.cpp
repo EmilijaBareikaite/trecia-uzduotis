@@ -195,36 +195,80 @@ int main() {
                 {
                     failo_skaitymas(failo_kelias, laikinas, grupe);
                     
-                    for (auto &a: grupe) {a.rusiavimas=atsakymas;}
-                    
-                    sort(grupe.begin(), grupe.end());
-                    
                     if (strategija==1) 
                     {
+                        for (auto &a: grupe) {a.rusiavimas=atsakymas;}
+                        
+                        sort(grupe.begin(), grupe.end());
+                        
                         rusiavimas_dv_gr(grupe, vargsiukai, gudruciai);
+                        
+                        
                         isrusiuotas_spausdinimas(vargsiukai, gudruciai);
                     }
                     else if (strategija==2)
-                        {
-                        rusiavimas_dv_gr_2(grupe, vargsiukai);
+                    {
+                            for (auto &a: grupe) {a.rusiavimas=4;}
+                            sort(grupe.begin(), grupe.end());
+                            padalinimas_v(grupe, vargsiukai);
+                            
+                            for (auto &a: grupe) {a.rusiavimas=atsakymas;}
+                            for (auto &a: vargsiukai) {a.rusiavimas=atsakymas;}
+                            
+                            sort(grupe.begin(), grupe.end());
+                            sort(vargsiukai.begin(), vargsiukai.end());
+                            
+                            
                         isrusiuotas_spausdinimas(vargsiukai, grupe);
-                        }
-                    
-                    
+                    }
+                    else 
+                    {   for (auto &a: grupe) {a.rusiavimas=atsakymas;}
+                        sort(grupe.begin(), grupe.end());
+                        
+                        padalinimas_v_3(grupe, vargsiukai);
+
+                        isrusiuotas_spausdinimas(vargsiukai, grupe);
+                    }
                 }
                 
                 else if (tipas == 'l')
                 {
                     failo_skaitymas(failo_kelias, l_laikinas, l_grupe);
                     
-                    for (auto &a: l_grupe) {a.rusiavimas=atsakymas;}
-                    
-                    l_grupe.sort();
-                    
-                    if (strategija==1) rusiavimas_dv_gr(l_grupe, l_vargsiukai, l_gudruciai);
-//                    else if (strategija==2) rusiavimas_dv_gr_2(l_grupe, l_vargsiukai);
-                    
-                    isrusiuotas_spausdinimas(l_vargsiukai, l_gudruciai);
+                    if (strategija==1) 
+                    {
+                        for (auto &a: l_grupe) {a.rusiavimas=atsakymas;}
+                        
+                        l_grupe.sort();
+                        
+                        rusiavimas_dv_gr(l_grupe, l_vargsiukai, l_gudruciai);
+                        isrusiuotas_spausdinimas(l_vargsiukai, l_gudruciai);
+                    }
+                    else if (strategija==2) 
+                    {
+                        for (auto &a: l_grupe) {a.rusiavimas=3;}
+                        l_grupe.sort();
+                        padalinimas_l(l_grupe, l_vargsiukai);
+                        
+                        for (auto &a: l_grupe) {a.rusiavimas=atsakymas;}
+                        for (auto &a: l_vargsiukai) {a.rusiavimas=atsakymas;}
+                        
+                        l_grupe.sort();
+                        l_vargsiukai.sort();
+                        
+                        isrusiuotas_spausdinimas(l_vargsiukai, l_grupe);
+                    }
+                    else
+                    {
+                        padalinimas_l_3(l_grupe, l_vargsiukai);
+                        
+                        for (auto &a: l_grupe) {a.rusiavimas=atsakymas;}
+                        l_grupe.sort();
+                        for (auto &a: l_vargsiukai) {a.rusiavimas=atsakymas;}
+                        l_vargsiukai.sort();
+
+                        isrusiuotas_spausdinimas(l_vargsiukai, l_grupe);
+                    }
                 }
             }
             

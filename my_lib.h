@@ -51,7 +51,8 @@ struct studentas {
             }
             return vard < other.vard;
         }
-        else {return rez <other.rez;}
+        else if (rusiavimas==3){return rez <other.rez;}
+        else return rez > other.rez;
     }
 };
 struct l_studentas {
@@ -156,24 +157,77 @@ template <class T1> void rusiavimas_dv_gr(T1 grupe, T1 &vargsiukai, T1 &gudrucia
     cout << to_string(grupe.size()) + " įrašų dalijimo i dvi grupes laikas: "<< diff_2.count() << " s\n";
 }
 
-template <class T1> void rusiavimas_dv_gr_2(T1 &grupe, T1 &vargsiukai) {
+
+template <class P>
+void padalinimas_v(P& grupe, P& vargsiukai) {
+        int skaic = grupe.size();
+        
+        auto start_2 = high_resolution_clock::now();
+    
+    while (!grupe.empty() && grupe.back().rez < 5.0) {
+        vargsiukai.push_back(grupe.back());
+        grupe.pop_back();
+    
+    }
+    auto end_2 = high_resolution_clock::now();
+   
+       duration<double> diff_2 = end_2-start_2;
+       cout << to_string(skaic) + " įrašų dalijimo i dvi grupes laikas: "<< diff_2.count() << " s\n";
+}
+
+template <class P>
+void padalinimas_l(P& grupe, P& vargsiukai) {
+        int skaic = grupe.size();
+        auto start_2 = high_resolution_clock::now();
+    
+    while (!grupe.empty() && grupe.front().rez < 5.0) {
+        vargsiukai.push_front(grupe.front());
+        grupe.pop_front();
+    }
+    auto end_2 = high_resolution_clock::now();
+   
+       duration<double> diff_2 = end_2-start_2;
+       cout << to_string(skaic) + " įrašų dalijimo i dvi grupes laikas: "<< diff_2.count() << " s\n";
+}
+
+template <class P>
+void padalinimas_v_3(P& grupe, P& vargsiukai) {
     int skaic = grupe.size();
     auto start_2 = high_resolution_clock::now();
-    for (auto it = grupe.begin(); it != grupe.end();) {
-            studentas lol = *it;
-            if (lol.rez < 5) {
-                vargsiukai.push_back(lol);
-                it = grupe.erase(it);
-            } else {
-                ++it;
-            }
-        }
-   
-    auto end_2 = high_resolution_clock::now();
     
-    duration<double> diff_2 = end_2-start_2;
-    cout << to_string(skaic) + " įrašų dalijimo i dvi grupes laikas: "<< diff_2.count() << " s\n";
+    auto partitionPoint = std::partition(grupe.begin(), grupe.end(), [](const studentas& a) {
+                return a.rez < 5;
+                });
+
+            // Visus studentus, kuriu galutinis < 5 dedame i vargsiukus
+            vargsiukai.insert(vargsiukai.end(), grupe.begin(), partitionPoint);
+
+            // Is grupes istriname studentus, kurie buvo ideti i vargsiukus
+            grupe.erase(grupe.begin(), partitionPoint);
+    
+    auto end_2 = high_resolution_clock::now();
+    duration<double> diff_2 = end_2 - start_2;
+        cout << to_string(skaic) + " įrašų dalijimo i dvi grupes laikas: " << diff_2.count() << " s\n";
 }
+template <class P>
+void padalinimas_l_3(P& grupe, P& vargsiukai) {
+    int skaic = grupe.size();
+    auto start_2 = high_resolution_clock::now();
+
+        auto partitionPoint = std::partition(grupe.begin(), grupe.end(), [](const l_studentas& a) {
+            return a.rez < 5;
+        });
+    // Visus studentus, kuriu galutinis < 5 dedame i vargsiukus
+    vargsiukai.insert(vargsiukai.end(), grupe.begin(), partitionPoint);
+
+    // Is grupes istriname studentus, kurie buvo ideti i vargsiukus
+    grupe.erase(grupe.begin(), partitionPoint);
+
+        auto end_2 = high_resolution_clock::now();
+        duration<double> diff_2 = end_2 - start_2;
+        cout << to_string(skaic) + " įrašų dalijimo i dvi grupes laikas: " << diff_2.count() << " s\n";
+    }
+
 
 
 template <class T1> void isrusiuotas_spausdinimas(T1 vargsiukai, T1 gudruciai) {auto start = high_resolution_clock::now();
