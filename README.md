@@ -29,9 +29,11 @@ _List konteinerio atveju_
 |  Failo išrūšiavimo vidutinis laikas           | 0 s     |  0,01 s | 0,08 s | 0,93 s  |  10,92 s  |
 |  Vargšiukų failo spausdinimo vidutinis laikas | 0 s     |  0,02 s | 0,19 s | 1,99 s  |  20,93 s  |
 |  Gudručių failo spausdinimo vidutinis laikas  | 0 s     |  0,03 s | 0,28 s | 2,75 s  |  31,20 s  |
-|  **Bendrai užtrukta**                             | **0,07 s** |  **0,53 s** | **4,88 s** | **48,87 s** |  **497,5 s** |
+|  **Bendrai užtrukta**                         | **0,07 s** |  **0,53 s** | **4,88 s** | **48,87 s** |  **497,5 s** |
 
 **Palyginimas**: matoma, kad, kai failai yra sudaryti iš 1000 arba 10000 studentų, su list konteineriu programa veikia sparčiau arba taip pat, tačiau jau didėjant studentų kiekiui (esant 100000, 1000000, 10000000 studentų) programa veikia sparčiau su vector konteineriu.
+
+Taip pat programoje buvo implementuotos 3 strategijos, skirtos optimizuoti failo rūšiavimą į dvi grupes (vargšiukus ir gudručius). 1 strategija rūšiuoja studentus, pereidamas per visus studentus ir nukopijuojant juos į naujus konteinerius; 2 strategija dirba tik su vargšiukų konteineriu, t. y. studentai, kurių galutinis rezulatas <5 yra pridedami į minėtą konteinerį ir paskui ištrinami iš visos grupės, taip pabaigoje grupėje lieka tik grudurčiai; 3 strategija dirba su 1 arba 2 strategija, priklausomai, kuri yra greitesnė, ir prideda dar nenaudotų funkcijų, kurios paspartina programos veikimą.
 
 **Kompiuterio duomenys**:
 
