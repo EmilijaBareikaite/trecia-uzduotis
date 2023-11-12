@@ -78,6 +78,7 @@ Output, kai generuojamas failas
 <img width="887" alt="failo_generavimo_pvz" src="https://github.com/EmilijaBareikaite/pirma-uzduotis/assets/145277411/3ad276bd-dae2-4001-bd78-7f1d36a9e906">
 
 Output, kai nuskaitomas failas
-<img width="890" alt="failo_nuskaitymo_pvz" src="https://github.com/EmilijaBareikaite/pirma-uzduotis/assets/145277411/54d8351c-eefd-4d63-ae1c-90ab619c015f">
+
+<img width="725" alt="Screenshot 2023-11-12 at 13 50 28" src="https://github.com/EmilijaBareikaite/pirma-uzduotis/assets/145277411/c704e701-3760-4fb7-a46e-c49a94a9210f">
 
 
