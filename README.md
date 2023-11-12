@@ -58,6 +58,7 @@ _List konteinerio atveju_
 
 **Išvados apie strategijas:** Iš duomenų galima matyti, kad **3 strategija yra greičiausia**, o **1 strategija - lėčiausia**. (abiejų, list ir vector, konteinerių atveju)
 
+**Įdiegimo bei naudojimosi instukcija:** reikia atsisiųsti pateiktus failus ir susidėti į bendrą aplanką. Šiame aplankale sukurkite "src" ir "include" aplankalus, į "src" sudėkite visus .cpp failus, o į "include" visus .h failus, o visus kitus failus palikite aplankale. Jeigu Jūs turite "windows" operacinę sistemą, paleiskite RUNMEE.but failą, jeigu turite kitą operacinę, leiskite RUNMEE.sh failą. To turi pakakti, kad programa pasileistų. Toliau, suvedinėkite į terimnalą tai, ką nurodo terminale pateikiamos instrukcijos bei, žinoma, priklausomai ką Jūs norite nuveikti (opcijos aprašytos viršuje) su programa. 
 
 **Kompiuterio duomenys**:
 
