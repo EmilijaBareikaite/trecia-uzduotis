@@ -37,7 +37,7 @@ _List konteinerio atveju_
 
 **Strategijų išvados:**
 
-_Vector atveju_
+_Vector konteinerio atveju_
 |            |   1 strategija     |    2 strategija   |   3 strategija   | 
 | ---------- |:------------------:|:-----------------:|:----------------:|
 |  1000      | 0 s     |  0 s    |  0 s    |
@@ -46,15 +46,15 @@ _Vector atveju_
 |  1000000   | 0,49 s  |  0,32 s |  0,3 s  |
 |  10000000  | 5 s     |  4,52 s |  3,1 s  |
 
-_List atveju_
+_List konteinerio atveju_
 |            |   1 strategija     |    2 strategija   |   3 strategija   | 
 | ---------- |:------------------:|:-----------------:|:----------------:|
-|            |  vector |  list    |  vector |   list  | vector |   list  |
-|  1000      | 0 s     |  0 s     | 3,95 s | 39,42 s |  396,06 s |
-|  10000     | 0,01 s  |  0,01 s  | 0,39 s | 3,78 s  |  38,4 s   |
-|  100000    | 0,05 s  |  0,08 s  | 0,08 s | 0,93 s  |  10,92 s  |
-|  1000000   | 0,49 s  |  0,93 s  | 0,19 s | 1,99 s  |  20,93 s  |
-|  10000000  | 5 s     |  10,92 s | 0,28 s | 2,75 s  |  31,20 s  |
+|  1000      | 0 s     |  0 s    |  0 s     |
+|  10000     | 0,01 s  |  0,01 s |  0,01 s  |
+|  100000    | 0,08 s  |  0,07 s |  0,06 s  |
+|  1000000   | 0,93 s  |  0,7 s  |  0,56 s  |
+|  10000000  | 10,92 s |  9,62 s |  8,78 s  |
+
 
 **Kompiuterio duomenys**:
 
