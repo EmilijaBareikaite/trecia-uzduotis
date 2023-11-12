@@ -5,9 +5,9 @@
 
 Šioje programoje yra opcija visą programą vykdyti su dviem skirtingais konteineriais - vector ir list (vartotojas pasirenka). Taip pat skaičiuojamas tam tikrų žingsnių laikas: failo generavimo, failo nuskaitymo, išrūšiavimo(pateiktas failas, rūšiuojamas į gudručius (galutinis rezultatas >= 5) ir vargšiukus(galutinis rezultatas < 5)). Tuo tikslu buvo atlikta analizė su 5 skirtingų dydžių failais - 1000, 10000, 100000, 1000000, 10000000, norint palyginti šių dviejų konteinerių veikimo spartą. 
 
-Taip pat programoje buvo implementuotos **3 strategijos, skirtos optimizuoti faile esančių studentų rūšiavimą į dvi grupes (vargšiukus ir gudručius)**. _1 strategija_ rūšiuoja studentus, pereidamas per visus studentus ir nukopijuojant juos į naujus konteinerius; _2 strategija_ dirba tik su vargšiukų konteineriu, t. y. studentai, kurių galutinis rezulatas <5 yra pridedami į minėtą konteinerį ir paskui ištrinami iš visos grupės, taip pabaigoje grupėje lieka tik grudurčiai; _3 strategija_ dirba su 1 arba 2 strategija, priklausomai, kuri yra greitesnė, ir prideda dar nenaudotų funkcijų, kurios paspartina programos veikimą. Visų trijų strategijų išvados bus pateikiama žemiau.
+Taip pat programoje buvo implementuotos **3 strategijos, skirtos optimizuoti faile esančių studentų rūšiavimą į dvi grupes (vargšiukus ir gudručius)**. _1 strategija_ rūšiuoja studentus, pereidamas per visus studentus ir nukopijuojant juos į naujus konteinerius; _2 strategija_ dirba tik su vargšiukų konteineriu, t. y. studentai, kurių galutinis rezultatass <5 yra pridedami į minėtą konteinerį ir paskui ištrinami iš visos grupės, taip pabaigoje grupėje lieka tik gudtučiai; _3 strategija_ dirba su 1 arba 2 strategija, priklausomai, kuri yra greitesnė, ir prideda dar nenaudotų funkcijų, kurios paspartina programos veikimą. Visų trijų strategijų išvados bus pateikiama žemiau.
 
-**Analizės eiga:** buvo kuriamas vienas tam tikro dydžio (tačiau visuose failuose buvo 5 namų darbų rezultatai) failas ir buvo išmatuotajamas jo sukūrimo laikas. Tuomet tas pats failas 5 kartus buvo nuskaitomas, išrūšiuojmas ir vėliau iš jo spausdinami 2 nauji failai naudojant vektorių arba listą. Gavus visus skaičiavimas, buvo vedami vidurkiai 100-tųjų tikslumu (jie ir bus pateikiami išvadose) ir lyginami rezultatai.
+**Analizės eiga:** buvo kuriamas vienas tam tikro dydžio (tačiau visuose failuose buvo 5 namų darbų rezultatai) failas ir buvo išmatuojamas jo sukūrimo laikas. Tuomet tas pats failas 5 kartus buvo nuskaitomas, išrūšiuojmas ir vėliau iš jo spausdinami 2 nauji failai naudojant vektorių arba listą. Gavus visus skaičiavimas, buvo vedami vidurkiai 100-tųjų tikslumu (jie ir bus pateikiami išvadose) ir lyginami rezultatai.
 
 **Analizės išvados:**
 
@@ -20,7 +20,7 @@ _Vector konteinerio atveju_
 |  Failo išrūšiavimo vidutinis laikas           | 0 s     |  0,01 s | 0,05 s | 0,49 s  |  5 s      |
 |  Vargšiukų failo spausdinimo vidutinis laikas | 0 s     |  0,02 s | 0,19 s | 1,89 s  |  20,12 s  |
 |  Gudručių failo spausdinimo vidutinis laikas  | 0,01 s  |  0,03 s | 0,27 s | 2,64 s  |  27,86 s  |
-|  **Bendrai užtrukta**                             | **0,08 s** |  **0,53 s** | **4,82 s** | **47,94 s** |  **485,64 s** |
+|  **Bendrai užtrukta**                         | **0,08 s** |  **0,53 s** | **4,82 s** | **47,94 s** |  **485,64 s** |
 
 _List konteinerio atveju_
 
