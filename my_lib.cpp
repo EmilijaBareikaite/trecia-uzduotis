@@ -41,19 +41,7 @@ void budo_patikrinimas(char& budas) {
         budo_patikrinimas(budas);
     }
 }
-//void egzamino_tikrinimas(int& egz, struct studentas laikinas) {
-//    try {if (cin.fail() || egz <= 0 || egz>10) throw std::invalid_argument("Netinkamai įvesta. Prašome įvesti teigiamą sveiką skaičių tarp 1 ir 10");
-//    }
-//    catch (const std::invalid_argument& e) {
-//        std::cerr<< e.what()<<endl;
-//        cin.clear();
-//        cin.ignore(256, '\n');
-//        cout<<"Įveskite iš naujo: ";
-//        cin>>egz;
-//        laikinas.egz = egz;
-//        egzamino_tikrinimas(egz, laikinas);
-//    }
-//}
+
 
 void a_paz_tikrinimas(int& a_paz_kiekis) {
     try {if (cin.fail() || (a_paz_kiekis < 0)) {

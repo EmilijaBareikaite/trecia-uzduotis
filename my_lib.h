@@ -92,11 +92,6 @@ template <class T1, class T2> float gal_vid(const T1 &pazymiai, T2 &egzaminas) {
     return rez;
 }
 
-float count_median(vector<int> pazymiai);
-float count_median_l(list<int>& pazymiai) ;
-
-
-
 template <class T1, class T2, class T3> void failo_skaitymas(T1 failo_kelias, T2 laikinas, T3 &grupe){
     auto start_1 = high_resolution_clock::now();
     ifstream myfile(failo_kelias);
@@ -228,8 +223,6 @@ void padalinimas_l_3(P& grupe, P& vargsiukai) {
         cout << to_string(skaic) + " įrašų dalijimo i dvi grupes laikas: " << diff_2.count() << " s\n";
     }
 
-
-
 template <class T1> void isrusiuotas_spausdinimas(T1 vargsiukai, T1 gudruciai) {auto start = high_resolution_clock::now();
     ofstream failas("vargsiukai.txt");
     if(!failas) {std::cerr<<"Failo klaida"<<endl;}
@@ -300,6 +293,8 @@ void Generavimas_failo(int skaic);
 int generate_random_mark();
 void mokiniu_sk_patikrinimas(int& m);
 void budo_patikrinimas(char& budas);
+float count_median(vector<int> pazymiai);
+float count_median_l(list<int>& pazymiai) ;
 
 
 
