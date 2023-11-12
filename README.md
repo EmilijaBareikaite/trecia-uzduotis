@@ -56,6 +56,9 @@ _List konteinerio atveju_
 |  10000000  | 10,92 s |  9,62 s |  8,78 s  |
 
 
+**Išvados apie strategijas:** Iš duomenų galima matyti, kad **3 strategija yra greičiausia**, o **1 strategija - lėčiausia**. (abiejų, list ir vector, konteinerių atveju)
+
+
 **Kompiuterio duomenys**:
 
 CPU - Apple M1 chip 8-core CPU with 4 perform­ance cores and 4 efficiency cores
