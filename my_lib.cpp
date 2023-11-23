@@ -131,9 +131,17 @@ void egzamino_tikrinimas(int& egz, Studentas laikinas) {
         egzamino_tikrinimas(egz, laikinas);
     }
 }
-bool Lyginimas(const Studentas& x, const Studentas& y)
+bool LyginimasPagalPavarde(const Studentas& x, const Studentas& y)
 {
     return x.getSurname() < y.getSurname();
+}
+bool LyginimasPagalVarda(const Studentas& x, const Studentas& y)
+{
+    return x.getName() < y.getName();
+}
+bool LyginimasPagalRezultata(const Studentas& x, const Studentas& y)
+{
+    return x.getRez() < y.getRez();
 }
 
 void Generavimas_failo(int skaic)
@@ -171,3 +179,53 @@ void Generavimas_failo(int skaic)
     duration<double> diff = end-start;
     std::cout << to_string(skaic) + " elementų užpildymas užtruko: "<< diff.count() << " s\n";
 }
+
+void failo_skaitymas(string failo_kelias, Studentas laikinas, vector<Studentas> &grupe){
+    auto start_1 = high_resolution_clock::now();
+    ifstream myfile(failo_kelias);
+    int count_nd_words = 0;
+
+    if(myfile.fail() == true) {cout<<"nepavyko atidaryti failo"<<endl;
+    }
+
+    string eilute;
+
+    for (int i = 0; i<1; i++) getline(myfile,eilute);
+
+    istringstream iss(eilute);
+    string zodis;
+
+    while (iss >> zodis) {
+        if (zodis.substr(0, 2) == "ND") count_nd_words++;
+    }
+    string vardas, pavarde;
+    while(myfile >> vardas>> pavarde ) {
+        laikinas.setStudentas(vardas, pavarde);
+        for(int i=0; i<count_nd_words; i++)
+        {
+            float nd_skaicius;
+
+            if (!(myfile >> nd_skaicius)) throw std::invalid_argument("Pažymys nėra sveikas skaičius. Pataisykite failą");
+
+            if (nd_skaicius>10 || nd_skaicius <=0) throw std::invalid_argument("Pažymys nėra sveikas teigiamas skaičius tarp 1 ir 10. Pataisykite failą.");
+
+            laikinas.SetPAZ(nd_skaicius);
+        }
+        int egzaminas;
+        myfile>> egzaminas;
+        laikinas.setEgzaminas(egzaminas);
+        if (!myfile >> egzaminas) throw std::invalid_argument("Egzaminas nėra sveikas skaičius. Pataisykite failą");
+
+        else if (egzaminas>10 || egzaminas <=0) throw std::invalid_argument("Egzaminas nėra sveikas teigiamas skaičius tarp 1 ir 10. Pataisykite failą.");
+        
+        double vidurkis = Vidurkis(laikinas.getPaz());
+        laikinas.setRez(laikinas.GP(laikinas.GautiEgzamina(), vidurkis));
+        grupe.push_back(laikinas);
+        laikinas.EmptyPAZ();
+    }
+
+    myfile.close();
+    auto end_1 = high_resolution_clock::now();
+    duration<double> diff_1 = end_1-start_1;
+    std::cout << "Failo iš " + to_string(grupe.size()) + " įrašų nuskaitinėjimo laikas: "<< diff_1.count() << " s\n";
+};

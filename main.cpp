@@ -3,7 +3,7 @@
 int main() {
     
     Studentas laikinas;
-    vector<Studentas> grupe;
+    vector<Studentas> grupe, vargsiukai, gudruciai;
     
     char suvedimas;
     int egzaminas;
@@ -99,14 +99,38 @@ int main() {
             cout<<"Ar norite, kad rodytų studentų galutinį vidurkį ar medianą? Rašykite 'v', jeigu norite vidurkio, ir 'm', jeigu norite medianos. ";
             cin>>spausd;
             
-            sort(grupe.begin(), grupe.end(), Lyginimas);
+            sort(grupe.begin(), grupe.end(), LyginimasPagalPavarde);
             
             if (spausd == 'v') isvedimas_v(grupe);
             else if (spausd == 'm') isvedimas_m(grupe);
             else throw std::runtime_error("Netinkamas atsakymas suvedimui. Prašome įvesti 'm' arba 'v'.");
             
         }
-        else if (suvedimas =='g')
+                else if (suvedimas == 'f')
+                        {
+                                string failo_kelias;
+                                cout<< "Jūsų failo kelias: ";
+                                cin>> failo_kelias;
+                                
+                                failo_skaitymas(failo_kelias, laikinas, grupe);
+
+                                int atsakymas;
+                                cout<<"Pagal ką rūšiuoti vargšiukų ir gudručių failus? 1 - pagal vardą, 2 - pagal pavardę, 3 -  pagal rezultatą. ";
+                                cin>>atsakymas;
+                    
+                                   
+                            if (atsakymas==1) {sort(grupe.begin(), grupe.end(), LyginimasPagalVarda);}
+                            else if (atsakymas==2) {sort(grupe.begin(), grupe.end(), LyginimasPagalPavarde);}
+                            else {sort(grupe.begin(), grupe.end(), LyginimasPagalRezultata);}
+                                            
+                    
+                                    padalinimas_v_3(grupe, vargsiukai);
+                    
+                                    isrusiuotas_spausdinimas(vargsiukai, grupe);
+                                        
+                            }
+                    
+            else if (suvedimas =='g')
                     {
                             int failo_eilutes;
                             cout << "Kiek studentų bus faile? ";
