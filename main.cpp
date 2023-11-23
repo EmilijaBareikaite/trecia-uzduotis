@@ -21,7 +21,7 @@ int main() {
             cin >> m;
             mokiniu_sk_patikrinimas(m);
             if (m == 0) throw std::runtime_error("Programa baigė darbą, nes nėra studentų.");
-           
+            
             char budas;
             cout << "Ar norite suvesti studentų pažymius ir egzamino rezultatą automatiškai ar mechaniškai? Rašykite 'a', jei automatiškai ir 'm', jei mechaniškai.  ";
             cin >> budas;
@@ -57,7 +57,7 @@ int main() {
                     cin>>egzaminas;
                     laikinas.setEgzaminas(egzaminas);
                     egzamino_tikrinimas(egzaminas, laikinas);
-                   
+                    
                     double vidurkis = Vidurkis(laikinas.getPaz());
                     float medianaa = mediana(laikinas.getPaz());
                     laikinas.setRez(laikinas.GP(laikinas.GautiEgzamina(), vidurkis));
@@ -105,8 +105,22 @@ int main() {
             else if (spausd == 'm') isvedimas_m(grupe);
             else throw std::runtime_error("Netinkamas atsakymas suvedimui. Prašome įvesti 'm' arba 'v'.");
             
-        } }
-            
+        }
+        else if (suvedimas =='g')
+                    {
+                            int failo_eilutes;
+                            cout << "Kiek studentų bus faile? ";
+                            cin >> failo_eilutes;
+                   
+                            if (cin.fail() && failo_eilutes<0) throw std::invalid_argument("Netinkamas atsakymas. Prašome įvesti teigiamą sveiką skaičių.");
+                   
+                                Generavimas_failo(failo_eilutes);
+                   
+                    }
+                   
+            else throw std::runtime_error("Netinkamas atsakymas suvedimui. Prašome įvesti 's' arba 'f', arba 'g'.");}
+    
+
            
          catch (const std::exception& e) {std::cerr << "An exception occurred: " << e.what() << endl;
                 return 1;}

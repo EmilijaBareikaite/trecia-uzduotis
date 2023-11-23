@@ -135,3 +135,39 @@ bool Lyginimas(const Studentas& x, const Studentas& y)
 {
     return x.getSurname() < y.getSurname();
 }
+
+void Generavimas_failo(int skaic)
+{
+    int n;
+    cout<<"Kiek namų darbų rezultatų turės studentai? ";
+    cin>>n;
+
+    if (n<0 || cin.fail()) throw std::invalid_argument("Netinkamai įvesta. Prašome įvesti teigiamą sveiką skaičių.");
+
+    auto start = high_resolution_clock::now();
+    ofstream failas("studentai"+to_string(skaic)+".txt");
+
+    if(!failas) {std::cerr<<"Failo klaida"<<endl;}
+
+    failas <<left<<setw(20)<< "Vardas" <<left<<setw(20)<<"Pavarde";
+
+    for(int i=1; i<=n; i++) failas <<left<<setw(5)<< "ND"+to_string(i);
+    failas <<left<<setw(5)<<"Egz"<< endl;
+
+    for (int j=1; j<=skaic; j++)
+    {
+        failas <<left<<setw(20)<< "Vardas" + to_string(j) <<left<<setw(20)<< "Pavarde" + to_string(j);
+        for (int k=0; k<n; k++)
+        {
+            int nd = generate_random_mark();
+            failas <<left<<setw(5)<< nd;
+        }
+            int egz = generate_random_mark();
+            failas <<left<<setw(5)<< egz <<endl;
+    }
+
+    failas.close();
+    auto end = high_resolution_clock::now();
+    duration<double> diff = end-start;
+    std::cout << to_string(skaic) + " elementų užpildymas užtruko: "<< diff.count() << " s\n";
+}
