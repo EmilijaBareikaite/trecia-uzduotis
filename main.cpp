@@ -57,10 +57,10 @@ int main() {
                     cin>>egzaminas;
                     laikinas.setEgzaminas(egzaminas);
                     egzamino_tikrinimas(egzaminas, laikinas);
-                    
+                   
                     double vidurkis = Vidurkis(laikinas.getPaz());
                     float medianaa = mediana(laikinas.getPaz());
-                    laikinas.setRez(vidurkis);
+                    laikinas.setRez(laikinas.GP(laikinas.GautiEgzamina(), vidurkis));
                     laikinas.setMediana(medianaa);
                     
                     grupe.push_back(laikinas);
@@ -82,7 +82,7 @@ int main() {
                     
                     double vidurkis = Vidurkis(laikinas.getPaz());
                     float medianaa = mediana(laikinas.getPaz());
-                    laikinas.setRez(vidurkis);
+                    laikinas.setRez(laikinas.GP(laikinas.GautiEgzamina(), vidurkis));
                     laikinas.setMediana(medianaa);
                     
                     grupe.push_back(laikinas);

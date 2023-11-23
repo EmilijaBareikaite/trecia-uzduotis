@@ -39,17 +39,7 @@ double Vidurkis(vector<int> paz)
     return vidurkis;
 }
 
-double Studentas::GP(int egzaminas, const std::vector<int> paz)
-{
-    if (paz.size() == 0)
-        throw std::domain_error("Studentas neatliko nei vieno namu darbo.");
-    return GP(egz_, Vidurkis(paz));
-}
 
-double Studentas::GP(double (*Criteria)(std::vector<int>))
-{
-    return GP(egz_, Criteria(paz));
-}
 
 float mediana(vector<int> pazymiai) {
     sort(pazymiai.begin(), pazymiai.end());

@@ -47,8 +47,7 @@ class Studentas {
     float getMediana() const { return mediana_; }
       int GautiDydi() const { return paz.size(); }
       double GP(int, double);
-      double GP(int, const std::vector<int>);
-      double GP(double (*) (std::vector<int>));
+    
       void setStudentas(std::string, std::string);
      void setEgzaminas(int);
     void setRez(float);
