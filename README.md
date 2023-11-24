@@ -1,4 +1,4 @@
-# **Pirma užduotis (v1.0)**
+# **Antra užduotis (v1.1)**
 1. Šioje programoje nuskaitomi duomenys, susiję su studentais - _jų vardai, pavardės, pažymiai ir egzaminų rezultatai._
 2. Vartotojas turi keturias opcijas: jis gali **mechaniškai suvesti duomenis**, gali **automatiškai sugeneruoti duomenis**, gali **skaityti duomenis iš pasirinkto failo**, ir gali **sugeneruoti failus**, nurodęs, kiek bus studentų ir kiek namų darbų rezultatų turės kiekvienas studentas.
 3. Output'e išvedama studentų _vardai, pavardės, galutinis rezultatas bei objektų saugojimo atmintyje adresai_ (sukurtų grupių ir studentų), jei vartotojas renkasi suvedinėti duomenis (vartotojas sprendžia ar per **medianą**, ar per **vidurkį** bus rodoma).
