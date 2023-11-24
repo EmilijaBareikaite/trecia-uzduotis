@@ -9,19 +9,29 @@ Taip pat buvo atlikta analizė, skirta palyginti spartą naudojant struktūrą i
 
 **Analizės išvados:**
 
-_Vector konteinerio atveju_
+_Naudojant struktūrą_
 
-|                                               |  1000   |  10000  | 100000 | 1000000 | 10000000  |
-| --------------------------------------------- |:-------:|:-------:|:------:|:-------:|:---------:|
-|  Failo generavimo laikas                      | 0,06 s  |  0,42 s | 3,95 s | 39,42 s |  396,06 s |
-|  Failo nuskaitymo vidutinis laikas            | 0,01 s  |  0,05 s | 0,36 s | 3,5 s   |  36,6 s   |
-|  Failo išrūšiavimo vidutinis laikas           | 0 s     |  0,01 s | 0,05 s | 0,49 s  |  5 s      |
-|  Vargšiukų failo spausdinimo vidutinis laikas | 0 s     |  0,02 s | 0,19 s | 1,89 s  |  20,12 s  |
-|  Gudručių failo spausdinimo vidutinis laikas  | 0,01 s  |  0,03 s | 0,27 s | 2,64 s  |  27,86 s  |
-|  **Bendrai užtrukta**                         | **0,08 s** |  **0,53 s** | **4,82 s** | **47,94 s** |  **485,64 s** |
+|                                                | 100000 | 1000000 | 
+| --------------------------------------------- |:-------:|:-------:|
+|  Failo generavimo laikas                      | 3,95 s | 39,42 s |  
+|  Failo nuskaitymo vidutinis laikas             | 0,36 s | 3,5 s   |  
+|  Failo išrūšiavimo vidutinis laikas           | 0,05 s | 0,49 s  |  
+|  Vargšiukų failo spausdinimo vidutinis laikas | 0,19 s | 1,89 s  |  
+|  Gudručių failo spausdinimo vidutinis laikas  | 0,27 s | 2,64 s  |  
+|  **Bendrai užtrukta**                         | **4,82 s** | **47,94 s** |
 
+_Naudojant klasę_
 
-**Palyginimas**: matoma, kad, kai failai yra sudaryti iš 1000 arba 10000 studentų, su list konteineriu programa veikia sparčiau arba taip pat, tačiau jau didėjant studentų kiekiui (esant 100000, 1000000, 10000000 studentų) programa veikia sparčiau su vector konteineriu.
+|                                                | 100000 | 1000000 | 
+| --------------------------------------------- |:-------:|:-------:|
+|  Failo generavimo laikas                      | 3,95 s | 39,42 s |  
+|  Failo nuskaitymo vidutinis laikas             | 0,34 s | 3,26 s   |  
+|  Failo išrūšiavimo vidutinis laikas           | 0,03 s | 0,36 s  |  
+|  Vargšiukų failo spausdinimo vidutinis laikas | 0,19 s | 1,95 s  |  
+|  Gudručių failo spausdinimo vidutinis laikas  | 0,29 s | 2,84 s  |  
+|  **Bendrai užtrukta**                         | **4,8 s** | **48,83s** |
+
+**Palyginimas:** Iš lentelės rezultatų matoma, kad su struktūra ir klase veikimo sparta panaši, bet **su klase veikia sparčiau** (dažniausiai). 
 
 
 
