@@ -37,8 +37,9 @@ class Studentas {
         float rez_, mediana_;
     
     public:
-      Studentas() : egz_(0) { }  // default konstruktorius
-      Studentas(std::istream& is);
+        Studentas() : egz_(0) { }  // default konstruktorius
+        Studentas(std::istream& is);
+        ~Studentas(); //destruktorius
       std::string getName() const { return vardas_; }
       std::string getSurname() const { return pavarde_; }
     vector<int> getPaz() const { return paz; }
@@ -122,7 +123,7 @@ void padalinimas_v_3(P& grupe, P& vargsiukai) {
     int skaic = grupe.size();
     auto start_2 = high_resolution_clock::now();
 
-    auto partitionPoint = std::partition(grupe.begin(), grupe.end(), [](const Studentas& a) {
+    auto partitionPoint = std::stable_partition(grupe.begin(), grupe.end(), [](const Studentas& a) {
                 return a.getRez() < 5;
                 });
 
