@@ -1,7 +1,8 @@
 # **Antra užduotis (v1.1)**
-1. Šioje programoje nuskaitomi duomenys, susiję su studentais - _jų vardai, pavardės, pažymiai ir egzaminų rezultatai._
-2. Vartotojas turi keturias opcijas: jis gali **mechaniškai suvesti duomenis**, gali **automatiškai sugeneruoti duomenis**, gali **skaityti duomenis iš pasirinkto failo**, ir gali **sugeneruoti failus**, nurodęs, kiek bus studentų ir kiek namų darbų rezultatų turės kiekvienas studentas.
-3. Output'e išvedama studentų _vardai, pavardės, galutinis rezultatas bei objektų saugojimo atmintyje adresai_ (sukurtų grupių ir studentų), jei vartotojas renkasi suvedinėti duomenis (vartotojas sprendžia ar per **medianą**, ar per **vidurkį** bus rodoma).
+
+**Tęsinys 1 užduoties**
+
+Šioje programoje atliekama tas pats, kaip ir pirmos užduoties programoje, tačiau visas veikimas realizuotas ne su struktūra, o su **_klase_**. Taip pat buvo paliktas darbas tik su vektoriaus konteineriu ir palikta greičiausiai veikianti strategija, skirta rūšiuoti studentus į dvi atskiras grupes. 
 
 Šioje programoje yra opcija visą programą vykdyti su dviem skirtingais konteineriais - vector ir list (vartotojas pasirenka). Taip pat skaičiuojamas tam tikrų žingsnių laikas: failo generavimo, failo nuskaitymo, išrūšiavimo(pateiktas failas, rūšiuojamas į gudručius (galutinis rezultatas >= 5) ir vargšiukus(galutinis rezultatas < 5)). Tuo tikslu buvo atlikta analizė su 5 skirtingų dydžių failais - 1000, 10000, 100000, 1000000, 10000000, norint palyginti šių dviejų konteinerių veikimo spartą. 
 
