@@ -2,13 +2,10 @@
 
 **Tęsinys 1 užduoties**
 
-Šioje programoje atliekama tas pats, kaip ir pirmos užduoties programoje, tačiau visas veikimas realizuotas ne su struktūra, o su **_klase_**. Taip pat buvo paliktas darbas tik su vektoriaus konteineriu ir palikta greičiausiai veikianti strategija, skirta rūšiuoti studentus į dvi atskiras grupes. 
+Šioje programoje atliekama tas pats, kaip ir pirmos užduoties programoje, tačiau visas veikimas realizuotas ne su struktūromis, o su **_klasėmis_**. Kode paliktas darbas tik su vektoriaus konteineriu ir palikta greičiausiai veikianti strategija, skirta rūšiuoti studentus į dvi atskiras grupes. 
 
-Šioje programoje yra opcija visą programą vykdyti su dviem skirtingais konteineriais - vector ir list (vartotojas pasirenka). Taip pat skaičiuojamas tam tikrų žingsnių laikas: failo generavimo, failo nuskaitymo, išrūšiavimo(pateiktas failas, rūšiuojamas į gudručius (galutinis rezultatas >= 5) ir vargšiukus(galutinis rezultatas < 5)). Tuo tikslu buvo atlikta analizė su 5 skirtingų dydžių failais - 1000, 10000, 100000, 1000000, 10000000, norint palyginti šių dviejų konteinerių veikimo spartą. 
+Taip pat buvo atlikta analizė, skirta palyginti spartą naudojant struktūrą ir klasę. Analizė atlikta su vektoriaus konteinerius, greičiausia strategija ir 100000, 1000000 failais.
 
-Taip pat programoje buvo implementuotos **3 strategijos, skirtos optimizuoti faile esančių studentų rūšiavimą į dvi grupes (vargšiukus ir gudručius)**. _1 strategija_ rūšiuoja studentus, pereidamas per visus studentus ir nukopijuojant juos į naujus konteinerius; _2 strategija_ dirba tik su vargšiukų konteineriu, t. y. studentai, kurių galutinis rezultatass <5 yra pridedami į minėtą konteinerį ir paskui ištrinami iš visos grupės, taip pabaigoje grupėje lieka tik gudtučiai; _3 strategija_ dirba su 1 arba 2 strategija, priklausomai, kuri yra greitesnė, ir prideda dar nenaudotų funkcijų, kurios paspartina programos veikimą. Visų trijų strategijų išvados bus pateikiama žemiau.
-
-**Analizės eiga:** buvo kuriamas vienas tam tikro dydžio (tačiau visuose failuose buvo 5 namų darbų rezultatai) failas ir buvo išmatuojamas jo sukūrimo laikas. Tuomet tas pats failas 5 kartus buvo nuskaitomas, išrūšiuojmas ir vėliau iš jo spausdinami 2 nauji failai naudojant vektorių arba listą. Gavus visus skaičiavimas, buvo vedami vidurkiai 100-tųjų tikslumu (jie ir bus pateikiami išvadose) ir lyginami rezultatai.
 
 **Analizės išvados:**
 
