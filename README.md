@@ -31,7 +31,7 @@ _Naudojant klasę_
 |  Gudručių failo spausdinimo vidutinis laikas  | 0,29 s | 2,84 s  |  
 |  **Bendrai užtrukta**                         | **4,8 s** | **48,83s** |
 
-**Palyginimas:** Iš lentelės rezultatų matoma, kad su struktūra ir klase veikimo sparta panaši, bet **su klase veikia sparčiau** (dažniausiai). 
+**Palyginimas:** Iš lentelės rezultatų matoma, kad su struktūra ir klase veikimo sparta panaši, bet galima pastebėti, kad failo nuskaitymas ir išrūšiavimas veikia sparčiau naudojant klases, o vargšiukų bei gudručių spausdinimas veikia greičiau naudojant struktūras. 
 
 
 
