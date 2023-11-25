@@ -37,9 +37,8 @@ class Studentas {
         float rez_, mediana_;
     
     public:
-        Studentas() : egz_(0) { }  // default konstruktorius
-        Studentas(std::istream& is);
-        ~Studentas(); //destruktorius
+      Studentas() : egz_(0) { }  // default konstruktorius
+      Studentas(std::istream& is);
       std::string getName() const { return vardas_; }
       std::string getSurname() const { return pavarde_; }
     vector<int> getPaz() const { return paz; }
@@ -150,9 +149,3 @@ void egzamino_tikrinimas(int& egz, Studentas laikinas);
 double Vidurkis(vector<int> paz);
 float mediana(vector<int> pazymiai);
 void failo_skaitymas(string failo_kelias, Studentas laikinas, vector<Studentas> &grupe);
-
-
-
-
-
-

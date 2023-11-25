@@ -117,14 +117,15 @@ int main() {
                                 int atsakymas;
                                 cout<<"Pagal ką rūšiuoti vargšiukų ir gudručių failus? 1 - pagal vardą, 2 - pagal pavardę, 3 -  pagal rezultatą. ";
                                 cin>>atsakymas;
-                            
+                    
+                                   
                             if (atsakymas==1) {sort(grupe.begin(), grupe.end(), LyginimasPagalVarda);}
                             else if (atsakymas==2) {sort(grupe.begin(), grupe.end(), LyginimasPagalPavarde);}
                             else {sort(grupe.begin(), grupe.end(), LyginimasPagalRezultata);}
-                            
-                           
+                                            
+                    
                                     padalinimas_v_3(grupe, vargsiukai);
-                          
+                    
                                     isrusiuotas_spausdinimas(vargsiukai, grupe);
                                         
                             }
@@ -147,7 +148,7 @@ int main() {
            
          catch (const std::exception& e) {std::cerr << "An exception occurred: " << e.what() << endl;
                 return 1;}
-        
+            
             system( "read -n 1 -s -p \"Press any key to continue...\"" );
             return 0;
         }
