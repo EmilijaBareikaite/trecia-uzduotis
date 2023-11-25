@@ -33,8 +33,46 @@ _Naudojant klasę_
 
 **Palyginimas:** Iš lentelės rezultatų matoma, kad su struktūra ir klase veikimo sparta yra gana panaši, tačiau **naudojant klases sparta yra greitesnė.**
 
-Taip pat buvo atlikta spartos analizė naudojant Flag'us O1, O2, O3. **Rezultatai:**
+Taip pat buvo atlikta spartos analizė naudojant Flag'us O1, O2, O3 klasėms ir struktūroms. **Rezultatai:**
 
+**Naudojant struktūrą**
+_O1 flag_
+|                                                | 100000 | 1000000 | 
+| --------------------------------------------- |:-------:|:-------:|
+|  Failo generavimo laikas                      | 3,95 s | 39,42 s |  
+|  Failo nuskaitymo vidutinis laikas             | 0,12 s | 0,78 s   |  
+|  Failo išrūšiavimo vidutinis laikas           | 0 s | 0,02 s  |  
+|  Vargšiukų failo spausdinimo vidutinis laikas | 0,12 s | 1,11 s  |  
+|  Gudručių failo spausdinimo vidutinis laikas  | 0,15 s | 1,55 s  |  
+|  **Bendrai užtrukta**                         | ** s** | ** s** |
+
+exe failo dydis: 127 136 bytes
+
+_O2 flag_
+|                                                | 100000 | 1000000 | 
+| --------------------------------------------- |:-------:|:-------:|
+|  Failo generavimo laikas                      | 3,95 s | 39,42 s |  
+|  Failo nuskaitymo vidutinis laikas             | 0,11 s | 0,78 s   |  
+|  Failo išrūšiavimo vidutinis laikas           | 0 s | 0,02 s  |  
+|  Vargšiukų failo spausdinimo vidutinis laikas | 0,12 s | 1,11 s  |  
+|  Gudručių failo spausdinimo vidutinis laikas  | 0,16 s | 1,61 s  |  
+|  **Bendrai užtrukta**                         | ** s** | ** s** |
+
+exe failo dydis: 127 040 bytes
+
+_O3 flag_
+|                                                | 100000 | 1000000 | 
+| --------------------------------------------- |:-------:|:-------:|
+|  Failo generavimo laikas                      | 3,95 s | 39,42 s |  
+|  Failo nuskaitymo vidutinis laikas             | 0,11 s | 0,77 s   |  
+|  Failo išrūšiavimo vidutinis laikas           | 0 s | 0,02 s  |  
+|  Vargšiukų failo spausdinimo vidutinis laikas | 0,13 s | 1,16 s  |  
+|  Gudručių failo spausdinimo vidutinis laikas  | 0,16 s | 1,73 s  |  
+|  **Bendrai užtrukta**                         | ** s** | ** s** |
+
+exe failo dydis: 126 672 bytes
+
+**Naudojant klasę**
 _O1 flag_
 |                                                | 100000 | 1000000 | 
 | --------------------------------------------- |:-------:|:-------:|
