@@ -44,7 +44,7 @@ _O1 flag_
 |  Failo išrūšiavimo vidutinis laikas           | 0 s | 0,02 s  |  
 |  Vargšiukų failo spausdinimo vidutinis laikas | 0,12 s | 1,11 s  |  
 |  Gudručių failo spausdinimo vidutinis laikas  | 0,15 s | 1,55 s  |  
-|  **Bendrai užtrukta**                         | ** s** | ** s** |
+|  **Bendrai užtrukta**                         | **4,34 s** | **42,88 s** |
 
 exe failo dydis: 127 136 bytes
 
@@ -56,7 +56,7 @@ _O2 flag_
 |  Failo išrūšiavimo vidutinis laikas           | 0 s | 0,02 s  |  
 |  Vargšiukų failo spausdinimo vidutinis laikas | 0,12 s | 1,11 s  |  
 |  Gudručių failo spausdinimo vidutinis laikas  | 0,16 s | 1,61 s  |  
-|  **Bendrai užtrukta**                         | ** s** | ** s** |
+|  **Bendrai užtrukta**                         | **4,34 s** | **42,94 s** |
 
 exe failo dydis: 127 040 bytes
 
@@ -68,7 +68,7 @@ _O3 flag_
 |  Failo išrūšiavimo vidutinis laikas           | 0 s | 0,02 s  |  
 |  Vargšiukų failo spausdinimo vidutinis laikas | 0,13 s | 1,16 s  |  
 |  Gudručių failo spausdinimo vidutinis laikas  | 0,16 s | 1,73 s  |  
-|  **Bendrai užtrukta**                         | ** s** | ** s** |
+|  **Bendrai užtrukta**                         | **4,35 s** | **43,1 s** |
 
 exe failo dydis: 126 672 bytes
 
@@ -109,7 +109,7 @@ _O3 flag_
 
 exe failo dydis: 108 848 bytes
 
-**Išvados**: programa veikia greičiau su šiais flag'ais. Greičiausi rezultatai su O3 flag'u. 
+**Išvados**: programa veikia greičiau su šiais flag'ais. Iš lentelių matoma, kad struktūroms greičiausiai veikia su O1 flag'u, o klasėms - O3.  
 
 **Įdiegimo bei naudojimosi instukcija:** reikia atsisiųsti pateiktus failus ir susidėti į bendrą aplanką. Šiame aplankale sukurkite "src" ir "include" aplankalus, į "src" sudėkite visus .cpp failus, o į "include" visus .h failus, o visus kitus failus palikite aplankale. Toliau intrukcijos pateiktos "mac OS" operacinės naudotojiems: atidarykite terminalą ir pasiekite Jūsų aplankalo direktoriją, tada rašykite "chmod +x RUNMEE.sh", tada suveskite "./RUNMEE.sh". To turi pakakti, kad programa pasileistų terminale. Toliau, suvedinėkite į terminalą tai, ką nurodo terminale pateikiamos instrukcijos, ir atsižvelkite į tai, ką norite  nuveikti (opcijos aprašytos viršuje) su programa. Be to, jeigu turite failų su kuriais norėsite dirbti (juos nuskaityti), įdėkite failus į src aplankalą ir pakeiskite (nukopijuokite, jei turite daugiau failų, arba ištrinkite šias eilutes, jeigu neturite) RUNMEE.sh 4, 5, 6, 7, 8 eilutes su jūsų failo pavadinimais.
 
