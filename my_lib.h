@@ -39,6 +39,7 @@ class Studentas {
     public:
       Studentas() : egz_(0) { }  // default konstruktorius
       Studentas(std::istream& is);
+    ~Studentas() {};
       std::string getName() const { return vardas_; }
       std::string getSurname() const { return pavarde_; }
     vector<int> getPaz() const { return paz; }
