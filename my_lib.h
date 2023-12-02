@@ -41,6 +41,8 @@ class Studentas {
     Studentas(); //konstruktorius
       Studentas(std::istream& is);
     ~Studentas();
+    Studentas(const Studentas& other);
+    
       std::string getName() const { return vardas_; }
       std::string getSurname() const { return pavarde_; }
     vector<int> getPaz() const { return paz; }

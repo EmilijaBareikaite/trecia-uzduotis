@@ -9,6 +9,21 @@ Studentas::Studentas() {
 Studentas::~Studentas() {
     delete[] elem;
 }
+Studentas::Studentas(const Studentas& other) {
+    vardas_ = other.vardas_;
+    pavarde_ = other.pavarde_;
+    egz_ = other.egz_;
+    paz = other.paz;
+    rez_ = other.rez_;
+    mediana_ = other.mediana_;
+    // Deep copy of the dynamic array elem
+    if (other.elem != nullptr) {
+        elem = new double[other.paz.size()];
+        std::copy(other.elem, other.elem + other.paz.size(), elem);
+    } else {
+        elem = nullptr;
+    }
+}
 
 void Studentas::setStudentas(std::string vardas, std::string pavarde)
 {
