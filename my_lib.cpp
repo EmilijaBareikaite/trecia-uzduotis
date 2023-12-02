@@ -5,10 +5,11 @@ Studentas::Studentas() {
     egz_=0;
     elem = new double [egz_];
 }
-
+//destruktorius
 Studentas::~Studentas() {
     delete[] elem;
 }
+//copy konstruktorius
 Studentas::Studentas(const Studentas& other) {
     vardas_ = other.vardas_;
     pavarde_ = other.pavarde_;
@@ -23,6 +24,27 @@ Studentas::Studentas(const Studentas& other) {
     } else {
         elem = nullptr;
     }
+}
+//priskyrimo operatorius
+Studentas& Studentas::operator=(const Studentas& other) {
+    if (this != &other) { // Avoid self-assignment
+        vardas_ = other.vardas_;
+        pavarde_ = other.pavarde_;
+        egz_ = other.egz_;
+        paz = other.paz;
+        rez_ = other.rez_;
+        mediana_ = other.mediana_;
+        // Deallocate existing dynamic array
+        delete[] elem;
+        // Deep copy of the dynamic array elem
+        if (other.elem != nullptr) {
+            elem = new double[other.paz.size()];
+            std::copy(other.elem, other.elem + other.paz.size(), elem);
+        } else {
+            elem = nullptr;
+        }
+    }
+    return *this;
 }
 
 void Studentas::setStudentas(std::string vardas, std::string pavarde)

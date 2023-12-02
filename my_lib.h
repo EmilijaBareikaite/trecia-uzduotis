@@ -40,9 +40,9 @@ class Studentas {
     public:
     Studentas(); //konstruktorius
       Studentas(std::istream& is);
-    ~Studentas();
-    Studentas(const Studentas& other);
-    
+    ~Studentas(); //destruktorius
+    Studentas(const Studentas& other); //copy kontruktorius
+    Studentas& operator=(const Studentas& other); //priskyrimo operatorius
       std::string getName() const { return vardas_; }
       std::string getSurname() const { return pavarde_; }
     vector<int> getPaz() const { return paz; }
