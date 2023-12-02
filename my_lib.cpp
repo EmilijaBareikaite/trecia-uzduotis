@@ -1,5 +1,14 @@
 #include "my_lib.h"
 
+//konstruktorius
+Studentas::Studentas() {
+    egz_=0;
+    elem = new double [egz_];
+}
+
+Studentas::~Studentas() {
+    delete[] elem;
+}
 
 void Studentas::setStudentas(std::string vardas, std::string pavarde)
 {
@@ -229,3 +238,4 @@ void failo_skaitymas(string failo_kelias, Studentas laikinas, vector<Studentas> 
     duration<double> diff_1 = end_1-start_1;
     std::cout << "Failo iš " + to_string(grupe.size()) + " įrašų nuskaitinėjimo laikas: "<< diff_1.count() << " s\n";
 };
+

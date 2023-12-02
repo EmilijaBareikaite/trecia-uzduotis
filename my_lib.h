@@ -35,11 +35,12 @@ class Studentas {
       int egz_;
       vector<int> paz;
         float rez_, mediana_;
+    double *elem;
     
     public:
-      Studentas() : egz_(0) { }  // default konstruktorius
+    Studentas(); //konstruktorius
       Studentas(std::istream& is);
-    ~Studentas() {};
+    ~Studentas();
       std::string getName() const { return vardas_; }
       std::string getSurname() const { return pavarde_; }
     vector<int> getPaz() const { return paz; }
