@@ -121,3 +121,27 @@ RAM - 8 GB
 
 HDD - 256 GB SSD
 
+Klasėje realizuoti minėti operatoriai ("Rule of three", išvesties, įvesties)
+
+<img width="591" alt="Screenshot 2023-12-03 at 18 30 51" src="https://github.com/EmilijaBareikaite/antra-uzduotis/assets/145277411/471aef39-5365-4643-8966-71cd1ba03237">
+
+
+
+Headery kaip atrodo "Rule of three" operatoriai
+
+<img width="592" alt="Screenshot 2023-12-03 at 18 31 57" src="https://github.com/EmilijaBareikaite/antra-uzduotis/assets/145277411/b4db3173-e269-4cd2-a6d4-7b9c5596197f">
+
+
+
+"Rule of three" kodo demonstravimo dalis
+
+<img width="386" alt="Screenshot 2023-12-03 at 18 32 21" src="https://github.com/EmilijaBareikaite/antra-uzduotis/assets/145277411/121f3a46-9364-421f-9d70-650740960182">
+
+
+Output, kai pasirenkama demonstruoti
+<img width="1111" alt="Screenshot 2023-12-03 at 18 33 24" src="https://github.com/EmilijaBareikaite/antra-uzduotis/assets/145277411/fb0a5565-8f0c-4236-938a-14e7562f1a55">
+
+
+
+
+
