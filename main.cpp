@@ -143,11 +143,15 @@ int main() {
                     }
                    
             else throw std::runtime_error("Netinkamas atsakymas suvedimui. Prašome įvesti 's' arba 'f', arba 'g'.");}
-    
+
 
            
          catch (const std::exception& e) {std::cerr << "An exception occurred: " << e.what() << endl;
                 return 1;}
+    Studentas lol;
+    lol.setStudentas("Emilija", "Bareikaite");
+    lol.setRez(2);
+    cout<<lol;
    
             system( "read -n 1 -s -p \"Press any key to continue...\"" );
             return 0;

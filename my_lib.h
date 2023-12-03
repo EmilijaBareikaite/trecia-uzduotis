@@ -43,6 +43,11 @@ class Studentas {
     ~Studentas(); //destruktorius
     Studentas(const Studentas& other); //copy kontruktorius
     Studentas& operator=(const Studentas& other); //priskyrimo operatorius
+    // išvesties operatorius
+    friend std::ostream& operator<<(std::ostream& out, const Studentas &a) {
+        out <<"Studento vardas, pavardė ir galutinis rezultatas: "<<a.getName()<<" "<<a.getSurname()<<" "<<a.getRez()<<endl;
+            return out;
+        }
       std::string getName() const { return vardas_; }
       std::string getSurname() const { return pavarde_; }
     vector<int> getPaz() const { return paz; }
