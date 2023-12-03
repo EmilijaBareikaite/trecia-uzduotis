@@ -7,7 +7,7 @@ int main() {
     
     char suvedimas;
     int egzaminas;
-    string vardas, pavarde;
+    
     
     try {
         
@@ -30,8 +30,7 @@ int main() {
             for (int j = 0; j < m; j++)
             {
                 cout<<"Įveskite studento vardą ir pavardę ";
-                cin>>vardas>>pavarde;
-                laikinas.setStudentas(vardas, pavarde);
+                cin>>laikinas; //cia panaudota ivedimo operatorius persidenges
                 
                 if (budas == 'm')
                 {
@@ -148,11 +147,7 @@ int main() {
            
          catch (const std::exception& e) {std::cerr << "An exception occurred: " << e.what() << endl;
                 return 1;}
-    Studentas lol;
-    lol.setStudentas("Emilija", "Bareikaite");
-    lol.setRez(2);
-    cout<<lol;
-   
+ 
             system( "read -n 1 -s -p \"Press any key to continue...\"" );
             return 0;
         }

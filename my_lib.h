@@ -48,6 +48,14 @@ class Studentas {
         out <<"Studento vardas, pavardė ir galutinis rezultatas: "<<a.getName()<<" "<<a.getSurname()<<" "<<a.getRez()<<endl;
             return out;
         }
+    //Įvesties operatorius
+    friend std::istream& operator>>(std::istream& in, Studentas &a) {
+        string vardas, pavarde;
+        float rez;
+            in >> vardas >> pavarde;
+            a.setStudentas(vardas, pavarde);
+            return in;
+        }
       std::string getName() const { return vardas_; }
       std::string getSurname() const { return pavarde_; }
     vector<int> getPaz() const { return paz; }
