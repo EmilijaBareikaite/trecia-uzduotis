@@ -45,13 +45,12 @@ class Studentas {
     Studentas& operator=(const Studentas& other); //priskyrimo operatorius
     // išvesties operatorius
     friend std::ostream& operator<<(std::ostream& out, const Studentas &a) {
-        out <<"Studento vardas, pavardė ir galutinis rezultatas: "<<a.getName()<<" "<<a.getSurname()<<" "<<a.getRez()<<endl;
+        out <<left<<setw(20)<<a.getName()<<left<<setw(20)<<a.getSurname();
             return out;
         }
     //Įvesties operatorius
     friend std::istream& operator>>(std::istream& in, Studentas &a) {
         string vardas, pavarde;
-        float rez;
             in >> vardas >> pavarde;
             a.setStudentas(vardas, pavarde);
             return in;
@@ -82,21 +81,21 @@ bool LyginimasPagalRezultata(const Studentas&, const Studentas&);
 
 template <class T> void isvedimas_v(T grupe)
  {
-    printf("%-25s%-20s%-15s\n", "Pavardė","Vardas","Galutinis (Vid.)" );
+    printf("%-20s%-20s%-15s\n", "Vardas","Pavarde","Galutinis (Vid.)" );
     cout<<"----------------------------------------------------------------"<<endl;
     for (auto &a: grupe)
     {
-        cout<<left<<setw(24)<<a.getSurname()<<left<<setw(20)<<a.getName()<<left<<setw(15)<<fixed<<setprecision(2)<<a.getRez()<<endl;
+        cout << a <<left<<setw(15)<<fixed<<setprecision(2)<<a.getRez()<<endl; //išvedimo persidengimo pritaikymas
     }
 }
 
 template <class T> void isvedimas_m(T grupe) {
 
-    printf("%-25s%-20s%-15s\n", "Pavardė","Vardas","Galutinis (Med.)" );
+    printf("%-20s%-20s%-15s\n", "Vardas","Pavarde","Galutinis (Med.)" );
     cout<<"----------------------------------------------------------------"<<endl;
     for (auto &a: grupe)
     {
-        cout<<left<<setw(24)<<a.getSurname()<<left<<setw(20)<<a.getName()<<left<<setw(15)<<fixed<<setprecision(2)<<a.getMediana()<<endl;
+        cout << a <<left<<setw(15)<<fixed<<setprecision(2)<<a.getMediana()<<endl; //išvedimo perisdengimo pritaikymas
     }
 }
 
@@ -108,7 +107,7 @@ template <class T1> void isrusiuotas_spausdinimas(T1 vargsiukai, T1 gudruciai) {
     failas <<left<<setw(20)<< "Vardas" <<left<<setw(20)<<"Pavarde"<<left<<setw(10)<<"Galutinis (Vid.)"<<endl;
     failas<<"-----------------------------------------------------"<<endl;
     for (auto &a: vargsiukai) {
-        failas<<left<<setw(20)<<a.getName()<<left<<setw(20)<<a.getSurname()<<left<<setw(10)<<fixed<<setprecision(2)<<a.getRez()<<endl;
+        failas<<a<<left<<setw(10)<<fixed<<setprecision(2)<<a.getRez()<<endl; //išvedimo persidengimo pritaikymas
     }
     failas.close();
     auto end = high_resolution_clock::now();
@@ -122,7 +121,7 @@ template <class T1> void isrusiuotas_spausdinimas(T1 vargsiukai, T1 gudruciai) {
     g_failas <<left<<setw(20)<< "Vardas" <<left<<setw(20)<<"Pavarde"<<left<<setw(10)<<"Galutinis (Vid.)"<<endl;
     g_failas<<"-----------------------------------------------------"<<endl;
     for (auto &a: gudruciai) {
-        g_failas<<left<<setw(20)<<a.getName()<<left<<setw(20)<<a.getSurname()<<left<<setw(10)<<fixed<<setprecision(2)<<a.getRez()<<endl;
+        g_failas<<a<<left<<setw(10)<<fixed<<setprecision(2)<<a.getRez()<<endl;//išvedimo persidengimo pritaikymas
     }
     g_failas.close();
     auto end_2 = high_resolution_clock::now();

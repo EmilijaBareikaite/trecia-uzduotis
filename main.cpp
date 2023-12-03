@@ -11,7 +11,7 @@ int main() {
     
     try {
         
-        cout << "Ar studentų duomenis norite nuskaityti iš failo, ar norite suvedinėti, ar norite generuoti failus? Spauskite 'f', jei iš failo, 's', jei norite suvedinėti, 'g', jei generuoti. ";
+        cout << "Ar studentų duomenis norite nuskaityti iš failo, ar norite suvedinėti, ar norite generuoti failus, ar norite pademnostruoti trijų metodų taisyklę? Spauskite 'f', jei iš failo, 's', jei norite suvedinėti, 'g', jei generuoti, 'd', jei demonstruoti. ";
         cin >> suvedimas;
         
         if (suvedimas == 's')
@@ -140,6 +140,16 @@ int main() {
                                 Generavimas_failo(failo_eilutes);
                    
                     }
+            else if (suvedimas=='d') {
+                //"trijų metodų taisyklės" demonstravimas
+                Studentas vienas;
+                vienas.setStudentas("Emilija", "Bareikaite");
+                Studentas antras{vienas};
+                Studentas trecias = vienas;
+                cout<<vienas<<endl;
+                cout<<antras<<endl;
+                cout<<trecias<<endl;
+            }
                    
             else throw std::runtime_error("Netinkamas atsakymas suvedimui. Prašome įvesti 's' arba 'f', arba 'g'.");}
 
@@ -147,6 +157,9 @@ int main() {
            
          catch (const std::exception& e) {std::cerr << "An exception occurred: " << e.what() << endl;
                 return 1;}
+
+    
+    
  
             system( "read -n 1 -s -p \"Press any key to continue...\"" );
             return 0;

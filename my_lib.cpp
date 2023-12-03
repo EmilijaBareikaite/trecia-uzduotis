@@ -244,9 +244,9 @@ void failo_skaitymas(string failo_kelias, Studentas laikinas, vector<Studentas> 
     while (iss >> zodis) {
         if (zodis.substr(0, 2) == "ND") count_nd_words++;
     }
-    string vardas, pavarde;
-    while(myfile >> vardas>> pavarde ) {
-        laikinas.setStudentas(vardas, pavarde);
+   
+    while(myfile >> laikinas) {
+        
         for(int i=0; i<count_nd_words; i++)
         {
             float nd_skaicius;
