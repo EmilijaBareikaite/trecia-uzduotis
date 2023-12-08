@@ -8,6 +8,7 @@ Studentas::Studentas() {
 //destruktorius
 Studentas::~Studentas() {
     delete[] elem;
+    cout<<"Objektas istrintas"<<endl;
 }
 //copy konstruktorius
 Studentas::Studentas(const Studentas& other) {

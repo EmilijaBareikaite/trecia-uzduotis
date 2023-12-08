@@ -157,10 +157,7 @@ int main() {
            
          catch (const std::exception& e) {std::cerr << "An exception occurred: " << e.what() << endl;
                 return 1;}
-
     
-    
- 
             system( "read -n 1 -s -p \"Press any key to continue...\"" );
             return 0;
         }
