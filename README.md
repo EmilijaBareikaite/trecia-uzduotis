@@ -127,9 +127,9 @@ Klasėje realizuoti minėti operatoriai ("Rule of three", išvesties, įvesties)
 
 
 
-Headery kaip atrodo "Rule of three" operatoriai
+Kaip atrodo "Rule of three" operatoriai
 
-<img width="592" alt="Screenshot 2023-12-03 at 18 31 57" src="https://github.com/EmilijaBareikaite/antra-uzduotis/assets/145277411/b4db3173-e269-4cd2-a6d4-7b9c5596197f">
+<img width="581" alt="image" src="https://github.com/EmilijaBareikaite/antra-uzduotis/assets/145277411/0de5c6a8-6bb3-4714-9f37-6b2ca3f7db5b">
 
 
 
@@ -139,7 +139,8 @@ Headery kaip atrodo "Rule of three" operatoriai
 
 
 Output, kai pasirenkama demonstruoti
-<img width="1111" alt="Screenshot 2023-12-03 at 18 33 24" src="https://github.com/EmilijaBareikaite/antra-uzduotis/assets/145277411/fb0a5565-8f0c-4236-938a-14e7562f1a55">
+<img width="1097" alt="image" src="https://github.com/EmilijaBareikaite/antra-uzduotis/assets/145277411/98ce8c47-89f2-4872-92c8-e45bbe1e8ba8">
+
 
 
 
