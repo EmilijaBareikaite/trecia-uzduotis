@@ -149,6 +149,9 @@ int main() {
                 cout<<vienas<<endl;
                 cout<<antras<<endl;
                 cout<<trecias<<endl;
+                cout<<vienas.getName()<<endl; //pasiekiamas bazinės klasės metodas
+                //Zmogus nepavykes;
+                //atkomentavvus matoma, kad nepavyksta sukurti bazinės klasės Zmogus objekto;
             }
                    
             else throw std::runtime_error("Netinkamas atsakymas suvedimui. Prašome įvesti 's' arba 'f', arba 'g'.");}
