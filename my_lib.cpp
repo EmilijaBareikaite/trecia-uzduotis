@@ -43,11 +43,7 @@ Studentas& Studentas::operator=(const Studentas& other) {
     return *this;
 }
 
-//void Studentas::setStudentas(std::string vardas, std::string pavarde)
-//{
-//    vardas_ = vardas;
-//    pavarde_ = pavarde;
-//}
+
 void Studentas::setEgzaminas(int egzaminas) {
     egz_ = egzaminas;
 }
