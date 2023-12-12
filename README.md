@@ -137,9 +137,11 @@ Kaip atrodo "Rule of three" operatoriai
 
 <img width="386" alt="Screenshot 2023-12-03 at 18 32 21" src="https://github.com/EmilijaBareikaite/antra-uzduotis/assets/145277411/121f3a46-9364-421f-9d70-650740960182">
 
+Demonstarvimas, kad bazinės klasės objektų neįmanoma sukurti
+<img width="627" alt="image" src="https://github.com/EmilijaBareikaite/antra-uzduotis/assets/145277411/0bdabce1-dde0-4bd9-9e8c-919c127d8790">
 
 Output, kai pasirenkama demonstruoti
-<img width="1097" alt="image" src="https://github.com/EmilijaBareikaite/antra-uzduotis/assets/145277411/98ce8c47-89f2-4872-92c8-e45bbe1e8ba8">
+<img width="896" alt="image" src="https://github.com/EmilijaBareikaite/antra-uzduotis/assets/145277411/631d0f83-d7d1-4d83-9faa-a97d2b01de21">
 
 
 
