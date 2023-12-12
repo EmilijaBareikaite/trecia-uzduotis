@@ -31,8 +31,8 @@ class Zmogus {
 protected:
     string vardas_;
     string pavarde_;
-public:
     Zmogus() : vardas_(""), pavarde_("") {}
+public:
     string getName() const { return vardas_; }
     string getSurname() const { return pavarde_;}
     void setPerson(string vardas, string pavarde) {vardas_ = vardas; pavarde_ = pavarde;}
@@ -40,7 +40,6 @@ public:
 
 class Studentas : public Zmogus {
     private:
-      
       int egz_;
       vector<int> paz;
         float rez_, mediana_;
@@ -70,7 +69,6 @@ class Studentas : public Zmogus {
     float getMediana() const { return mediana_; }
       int GautiDydi() const { return paz.size(); }
       double GP(int, double);
-//      void setStudentas(std::string, std::string);
      void setEgzaminas(int);
     void setRez(float);
     void setMediana(float);
@@ -105,7 +103,6 @@ template <class T> void isvedimas_m(T grupe) {
     }
 }
 
-
 template <class T1> void isrusiuotas_spausdinimas(T1 vargsiukai, T1 gudruciai) {auto start = high_resolution_clock::now();
     ofstream failas("vargsiukai.txt");
     if(!failas) {std::cerr<<"Failo klaida"<<endl;}
@@ -135,10 +132,6 @@ template <class T1> void isrusiuotas_spausdinimas(T1 vargsiukai, T1 gudruciai) {
     std::cout << "Gudručių įrašymo į failą laikas: "<< diff_2.count() << " s\n";
     }
 
-
-
-
-
 template <class P>
 void padalinimas_v_3(P& grupe, P& vargsiukai) {
     int skaic = grupe.size();
@@ -158,9 +151,6 @@ void padalinimas_v_3(P& grupe, P& vargsiukai) {
     duration<double> diff_2 = end_2 - start_2;
         cout << to_string(skaic) + " įrašų dalijimo i dvi grupes laikas: " << diff_2.count() << " s\n";
 }
-
-
-
 
 void a_paz_tikrinimas(int& a_paz_kiekis);
 void Generavimas_failo(int skaic);
