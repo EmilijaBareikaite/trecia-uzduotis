@@ -143,7 +143,7 @@ int main() {
             else if (suvedimas=='d') {
                 //"trijų metodų taisyklės" demonstravimas
                 Studentas vienas;
-                vienas.setStudentas("Emilija", "Bareikaite");
+                vienas.setPerson("Emilija", "Bareikaite");
                 Studentas antras{vienas};
                 Studentas trecias = vienas;
                 cout<<vienas<<endl;

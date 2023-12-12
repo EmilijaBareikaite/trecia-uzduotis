@@ -27,19 +27,27 @@ using std::to_string;
 using std::list;
 using namespace std::chrono;
 
+class Zmogus {
+protected:
+    string vardas_;
+    string pavarde_;
+public:
+    Zmogus() : vardas_(""), pavarde_("") {}
+    string getName() const { return vardas_; }
+    string getSurname() const { return pavarde_;}
+    void setPerson(string vardas, string pavarde) {vardas_ = vardas; pavarde_ = pavarde;}
+};
 
-
-class Studentas {
+class Studentas : public Zmogus {
     private:
-      string vardas_, pavarde_;
+      
       int egz_;
       vector<int> paz;
         float rez_, mediana_;
     double *elem;
     
     public:
-    Studentas(); //konstruktorius
-      Studentas(std::istream& is);
+    Studentas() : Zmogus(), egz_(0), rez_(0), mediana_(0), elem(nullptr) {}
     ~Studentas(); //destruktorius
     Studentas(const Studentas& other); //copy kontruktorius
     Studentas& operator=(const Studentas& other); //priskyrimo operatorius
@@ -52,19 +60,17 @@ class Studentas {
     friend std::istream& operator>>(std::istream& in, Studentas &a) {
         string vardas, pavarde;
             in >> vardas >> pavarde;
-            a.setStudentas(vardas, pavarde);
+            a.setPerson(vardas, pavarde);
             return in;
         }
-      std::string getName() const { return vardas_; }
-      std::string getSurname() const { return pavarde_; }
+      
     vector<int> getPaz() const { return paz; }
       int GautiEgzamina() const { return egz_; }
         float getRez() const { return rez_; }
     float getMediana() const { return mediana_; }
       int GautiDydi() const { return paz.size(); }
       double GP(int, double);
-    
-      void setStudentas(std::string, std::string);
+//      void setStudentas(std::string, std::string);
      void setEgzaminas(int);
     void setRez(float);
     void setMediana(float);

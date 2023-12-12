@@ -1,10 +1,5 @@
 #include "my_lib.h"
 
-//konstruktorius
-Studentas::Studentas() {
-    egz_=0;
-    elem = new double [egz_];
-}
 //destruktorius
 Studentas::~Studentas() {
     delete[] elem;
@@ -48,11 +43,11 @@ Studentas& Studentas::operator=(const Studentas& other) {
     return *this;
 }
 
-void Studentas::setStudentas(std::string vardas, std::string pavarde)
-{
-    vardas_ = vardas;
-    pavarde_ = pavarde;
-}
+//void Studentas::setStudentas(std::string vardas, std::string pavarde)
+//{
+//    vardas_ = vardas;
+//    pavarde_ = pavarde;
+//}
 void Studentas::setEgzaminas(int egzaminas) {
     egz_ = egzaminas;
 }
