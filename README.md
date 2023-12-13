@@ -2,7 +2,7 @@
 
 **Tęsinys 1 užduoties**
 
-Šioje programoje atliekama tas pats, kaip ir pirmos užduoties programoje, tačiau visas veikimas realizuotas ne su struktūromis, o su **_klasėmis_**. Kode paliktas darbas tik su vektoriaus konteineriu ir palikta greičiausiai veikianti strategija, skirta rūšiuoti studentus į dvi atskiras grupes. Programoje realizuoti **"Rule of three"** operatoriai bei **įvesties/išvesties** operatoriai sukurtai studento klasei. Įvesties/išvesties operatoriai pritaikyti pačiai programai, o "Rule of three" operatorių veikimui pademonstruoti buvo sukurtas atskira kodo dalis, kurią vartotojas gali pasirinkti paleisti. 
+Šioje programoje atliekama tas pats, kaip ir pirmos užduoties programoje, tačiau visas veikimas realizuotas ne su struktūromis, o su **_klasėmis_**. Kode paliktas darbas tik su vektoriaus konteineriu ir palikta greičiausiai veikianti strategija, skirta rūšiuoti studentus į dvi atskiras grupes. Programoje realizuoti **"Rule of three"** operatoriai bei **įvesties/išvesties** operatoriai sukurtai studento klasei. Įvesties/išvesties operatoriai pritaikyti pačiai programai, o "Rule of three" operatorių veikimui pademonstruoti buvo sukurtas atskira kodo dalis, kurią vartotojas gali pasirinkti paleisti. Programoje sukurtos dvi klasės - viena iš jų yra bazinė (Žmogaus klasė): jos objektų negalima sukurti, o kita išvestinė (Studentas) klasė, kuri pavledi bazinės kalsės metodus.
 
 Taip pat buvo atlikta analizė, skirta palyginti spartą naudojant struktūrą ir klasę. Analizė atlikta su vektoriaus konteinerius, greičiausia strategija ir 100000, 1000000 failais.
 
@@ -121,7 +121,14 @@ RAM - 8 GB
 
 HDD - 256 GB SSD
 
-Klasėje realizuoti minėti operatoriai ("Rule of three", išvesties, įvesties)
+Kaip atrodo klasės
+
+<img width="675" alt="image" src="https://github.com/EmilijaBareikaite/antra-uzduotis/assets/145277411/7589f296-02ee-45e6-bae7-c69fa0d5aa35">
+
+<img width="591" alt="image" src="https://github.com/EmilijaBareikaite/antra-uzduotis/assets/145277411/c698a058-caca-4213-b35e-f396326e830f">
+
+
+Studento klasėje realizuoti minėti operatoriai ("Rule of three", išvesties, įvesties)
 
 <img width="591" alt="Screenshot 2023-12-03 at 18 30 51" src="https://github.com/EmilijaBareikaite/antra-uzduotis/assets/145277411/471aef39-5365-4643-8966-71cd1ba03237">
 
@@ -133,11 +140,7 @@ Kaip atrodo "Rule of three" operatoriai
 
 
 
-"Rule of three" kodo demonstravimo dalis
-
-<img width="386" alt="Screenshot 2023-12-03 at 18 32 21" src="https://github.com/EmilijaBareikaite/antra-uzduotis/assets/145277411/121f3a46-9364-421f-9d70-650740960182">
-
-Demonstarvimas, kad bazinės klasės objektų neįmanoma sukurti
+Demonstarvimas, kad bazinės klasės objektų neįmanoma sukurti bei "Rule of three" kodo demonstravimo dalis
 <img width="627" alt="image" src="https://github.com/EmilijaBareikaite/antra-uzduotis/assets/145277411/0bdabce1-dde0-4bd9-9e8c-919c127d8790">
 
 Output, kai pasirenkama demonstruoti
