@@ -4,6 +4,8 @@
 
 Šioje programoje atliekama tas pats, kaip ir pirmos užduoties programoje, tačiau visas veikimas realizuotas ne su struktūromis, o su **_klasėmis_**. Kode paliktas darbas tik su vektoriaus konteineriu ir palikta greičiausiai veikianti strategija, skirta rūšiuoti studentus į dvi atskiras grupes. Programoje realizuoti **"Rule of three"** operatoriai bei **įvesties/išvesties** operatoriai sukurtai studento klasei. Įvesties/išvesties operatoriai pritaikyti pačiai programai, o "Rule of three" operatorių veikimui pademonstruoti buvo sukurtas atskira kodo dalis, kurią vartotojas gali pasirinkti paleisti. Programoje sukurtos dvi klasės - viena iš jų yra bazinė (Žmogaus klasė): jos objektų negalima sukurti, o kita išvestinė (Studentas) klasė, kuri pavledi bazinės kalsės metodus.
 
+Taip pat prie repozicijos yra prisegtas html.zip, kuris savyje turi šios programos dokumentaciją, sukurtą naudojant Doxygen. 
+
 Taip pat buvo atlikta analizė, skirta palyginti spartą naudojant struktūrą ir klasę. Analizė atlikta su vektoriaus konteinerius, greičiausia strategija ir 100000, 1000000 failais.
 
 
