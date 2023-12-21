@@ -1,4 +1,4 @@
-# **Antra užduotis (v1.5)**
+# **Antra užduotis (v2.0)**
 
 **Tęsinys 1 užduoties**
 
