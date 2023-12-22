@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.0)
 set(CMAKE_CXX_STANDARD 11)
-project(v2.0)
+project(antra_uzd)
 
 # Include directories
 include_directories(include)
@@ -9,5 +9,5 @@ include_directories(include)
 file(GLOB SOURCES "src/*.cpp")
 
 # Create an executable
-add_executable(pirma_uzd ${SOURCES})
+add_executable(antra_uzd ${SOURCES})
 
