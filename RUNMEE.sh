@@ -7,5 +7,5 @@ cp src/studentai100000.txt Debug/studentai100000.txt
 cp src/studentai1000000.txt Debug/studentai1000000.txt
 cp src/studentai10000000.txt Debug/studentai10000000.txt
 cd Debug
-./v2.0
+./antra_uzd
  
