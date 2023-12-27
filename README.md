@@ -1,4 +1,4 @@
-# **Antra užduotis (v2.0)**
+# **Trečia užduotis (v3.0)**
 
 **Tęsinys 1 užduoties**
 
@@ -114,6 +114,9 @@ exe failo dydis: 108 848 bytes
 **Išvados**: programa veikia greičiau su šiais flag'ais. Iš lentelių matoma, kad struktūroms greičiausiai veikia su O1 flag'u, o klasėms - O3.  
 
 **Įdiegimo bei naudojimosi instukcija:** reikia atsisiųsti pateiktus failus ir susidėti į bendrą aplanką. Šiame aplankale sukurkite "src" ir "include" aplankalus, į "src" sudėkite visus .cpp failus, o į "include" visus .h failus, o visus kitus failus palikite aplankale. Toliau intrukcijos pateiktos "mac OS" operacinės naudotojiems: atidarykite terminalą ir pasiekite Jūsų aplankalo direktoriją, tada rašykite "chmod +x RUNMEE.sh", tada suveskite "./RUNMEE.sh". To turi pakakti, kad programa pasileistų terminale. Toliau, suvedinėkite į terminalą tai, ką nurodo terminale pateikiamos instrukcijos, ir atsižvelkite į tai, ką norite  nuveikti (opcijos aprašytos viršuje) su programa. Be to, jeigu turite failų su kuriais norėsite dirbti (juos nuskaityti), įdėkite failus į src aplankalą ir pakeiskite (nukopijuokite, jei turite daugiau failų, arba ištrinkite šias eilutes, jeigu neturite) RUNMEE.sh 4, 5, 6, 7, 8 eilutes su jūsų failo pavadinimais.
+
+**Darbo su .dmg failu instrukcija:** repozitorijoje yra prisegtas failas: "galutine.dmg", skirtas atlikti panašią funkciją, kurią atlieka setup.exe/msi failai. Jų nebuvo galima realizuoti, kadangi dirbama ant macOS opearicnės sistemos. Todėl buvo sukurtas .dmg failas. Tai atminties diskas, kuris savyje laiko šios programos .exe failą bei pavyzdinį tektstinį failą, jeigu būtų norima išsitestuoti darbą su failais. Su .dmg failo pagalba, galima dalintis .exe failu su kitais macOS naudotoajais. _Kaip jis veikia:_ du kartus paspaudus failą, atsidaro langas, kuriame matomi .exe ir .txt failai; juos vartotojas tada gali išsikelti į kokią nori direktoriją (tarkim darbalaukį) ir tada jau gali paleisti sukurtą programą.  
+
 
 **Kompiuterio duomenys**:
 
