@@ -123,6 +123,7 @@ exe failo dydis: 108 848 bytes
 3. Atidaryti terminalą ir pasiekti direktoriją, kur yra .sh failas.
 4. Suvesti: chmod +x DMG.sh
 5. Suvesti: ./DMG.sh 
+
 To turi pakakti, kad failas pasileistų ir rastumėte .exe ir .txt failus darbalaukyje ir kitoje, jūsų nurodytoje direktorijoje.
 
 **Kompiuterio duomenys**:
